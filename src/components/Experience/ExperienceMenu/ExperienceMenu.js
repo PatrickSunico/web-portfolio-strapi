@@ -2,17 +2,19 @@ import React from "react"
 import * as tabStyles from "../../UI/Tabs.module.scss"
 
 const ExperienceMenu = props => {
+  const companies = props.tabs
+
   return (
     <ul className={tabStyles["tabsNav"]}>
-      {props.tabs.map((item, index) => (
-        <li key={index}>
+      {companies.map(({ node }, index) => (
+        <li key={node.strapiId}>
           <a
             className={`${tabStyles.tabsLink} ${
-              props.activeTabId === item.id && tabStyles.active
+              props.activeTabId === node.strapiId && tabStyles.active
             }`}
-            onClick={() => props.onNavClick(item.id)}
+            onClick={() => props.onNavClick(node.strapiId)}
           >
-            {item.name}
+            {node.company}
           </a>
         </li>
       ))}

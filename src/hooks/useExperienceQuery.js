@@ -6,6 +6,7 @@ export const useExperienceQuery = () => {
         edges {
           node {
             id
+            strapiId
             description {
               description
               id
@@ -14,14 +15,7 @@ export const useExperienceQuery = () => {
             country
             start_date
             end_date
-          }
-        }
-      }
-      companies: allStrapiExperiences {
-        edges {
-          node {
-            id
-            company
+            position
           }
         }
       }

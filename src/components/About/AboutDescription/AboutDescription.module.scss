@@ -33,6 +33,11 @@
         margin-bottom: 10px;
     }
 
+    ul.developmentColumn {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
     ul {
         li {
             list-style-type: none;

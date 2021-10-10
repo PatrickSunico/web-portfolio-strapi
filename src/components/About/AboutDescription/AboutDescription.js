@@ -10,20 +10,24 @@ import { DesignSkills, DevelopmentSkills } from "../../../data/SkillsData"
 import { useAboutQuery } from "../../../hooks/useAboutQuery"
 
 const Description = () => {
-  const renderDesign = DesignSkills.map(({ skills }, index) => (
-    <li className="" key={index}>
-      {skills}
-    </li>
-  ))
-  const renderDevelopment = DevelopmentSkills.map(({ skills }, index) => (
-    <li className="" key={index}>
-      {skills}
-    </li>
-  ))
-
   // About Section Query
   const aboutQuery = useAboutQuery()
+  const { about } = aboutQuery
+
+  // gets the Portrait Image
   const portrait = getImage(aboutQuery.portrait)
+
+  // Skills
+  const renderDesign = about.design_skills.map(({ skill, id }) => (
+    <li className="" key={id}>
+      {skill}
+    </li>
+  ))
+  const renderDevelopment = about.development_skills.map(({ skill, id }) => (
+    <li className="" key={id}>
+      {skill}
+    </li>
+  ))
   return (
     <>
       <div className="sectionHeaderLeft">
@@ -44,17 +48,7 @@ const Description = () => {
         >
           {/* Description */}
           <div className={`${classes["description"]}`}>
-            <p>
-              I'm a dreamer and a web aficionado, I like to implement ideas into
-              an actual product and build up on that idea to make it more robust
-              and scalable when it comes to websites,
-              <br /> <br />
-              Here you can see a selection of my best web design wireframes not
-              just websites, but right brain stuffs too such as logo designs and
-              many more
-              <br /> <br />
-              Technologies I’ve been working with recently
-            </p>
+            <p>{about.about_description} </p>
           </div>
 
           {/* Skills */}
@@ -66,7 +60,9 @@ const Description = () => {
 
             <div className="col col-xs-12 col-sm-6 col-md-7 col-lg-4 col-xl-3">
               <h3>Development</h3>
-              <ul>{renderDevelopment}</ul>
+              <ul className={classes["developmentColumn"]}>
+                {renderDevelopment}
+              </ul>
             </div>
           </div>
         </div>

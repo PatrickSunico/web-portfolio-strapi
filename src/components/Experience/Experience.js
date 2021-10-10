@@ -10,18 +10,20 @@ import ExperienceMenu from "./ExperienceMenu/ExperienceMenu"
 import { useExperienceQuery } from "../../hooks/useExperienceQuery"
 // Parent
 const Experience = () => {
+  // Experience
   const experienceQuery = useExperienceQuery()
   const experienceList = experienceQuery.experiences.edges
 
-  // Companies
-  const companyQuery = useExperienceQuery()
-  const companies = companyQuery.companies.edges
-  console.log(companies)
+  const companiesByYear = experienceList.sort(
+    (a, b) => new Date(b.node.start_date) - new Date(a.node.start_date)
+  )
 
-  const [activeTabId, setActiveTabId] = useState(workHistory[0].id) //props.workArray[0].id
+  const [activeTabId, setActiveTabId] = useState(
+    companiesByYear[0].node.strapiId
+  ) //props.workArray[0].id
   const activeTab = useMemo(
-    () => workHistory.find(tab => tab.id === activeTabId),
-    [activeTabId, workHistory]
+    () => experienceList.find(tab => tab.node.strapiId === activeTabId),
+    [activeTabId, experienceList]
   )
 
   return (
@@ -33,7 +35,7 @@ const Experience = () => {
           </div>
 
           <ExperienceMenu
-            tabs={workHistory}
+            tabs={companiesByYear}
             onNavClick={setActiveTabId}
             activeTabId={activeTabId}
           />
