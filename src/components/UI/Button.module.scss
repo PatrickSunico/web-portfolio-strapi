@@ -1,0 +1,28 @@
+.button {
+    background-color: var(--hero-button-color);
+    border: none;
+    font-family: var(--default-font);
+    text-align: center;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    padding: 1em 1.4em;
+    color: #fff;
+    line-height: initial;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    transition: var(--transition-all);
+    line-height: 1;
+
+    &:hover {
+        transform: var(--translateY);
+        background-color: var(--hero-button-hover);
+    }
+}
+
+.buttonSubmit {
+    @extend .button;
+    margin: 40px 0;
+    width: 100%;
+}

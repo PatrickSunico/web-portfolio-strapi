@@ -1,0 +1,104 @@
+@use "../../../styles/utils/mixins" as *;
+
+// Tabs Content
+.companyYearPositionBlock {
+    font-family: var(--default-font);
+    h4 {
+        font-weight: var(--fw-regular);
+        font-size: 20px;
+    }
+    .yearPositionBlock {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .year {
+            display: flex;
+            flex-direction: row;
+            text-align: right;
+
+            p {
+                line-height: 1;
+                font-weight: var(--fw-light);
+                font-size: 18px;
+                &:last-child {
+                    &::before {
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        content: "•";
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Work History
+.workHistoryContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--default-font);
+    margin-top: 1.6em;
+
+    ul li {
+        list-style: none;
+        font-size: 20px;
+        font-weight: var(--fw-light);
+        margin-bottom: 0.8em;
+        // margin: 1em 0;
+
+        &:nth-child(2n + 1) {
+            padding-right: 20px;
+        }
+
+        p {
+            font-size: var(--default-fs);
+
+            &::before {
+                display: inline-block;
+                content: "-";
+                // width: 1em;
+            }
+        }
+    }
+
+    .workContainer {
+        // margin: 2em 0;
+        padding: 0;
+    }
+}
+
+// Experience Tabs Desktop Styling
+@include respond(tablets) {
+    // company Year Position
+    .companyYearPositionBlock {
+        .yearPositionBlock {
+            flex-direction: row;
+            justify-content: space-between;
+            h3 {
+                margin-bottom: 0px;
+            }
+            .year {
+                flex-direction: column;
+                justify-content: flex-end;
+
+                p {
+                    &:last-child {
+                        &::before {
+                            content: "";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // workHistoryContainer
+    .workHistoryContainer {
+        flex-direction: row;
+    }
+}

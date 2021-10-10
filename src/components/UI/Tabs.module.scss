@@ -1,0 +1,87 @@
+@use "../../styles/utils/mixins" as *;
+
+// Experience Section
+.tabsNav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    // padding: 10px 0;
+    font-family: var(--default-font);
+    overflow-x: scroll;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background: #eee;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        /* top: 56px; */
+        z-index: -2;
+    }
+}
+.tabsContent {
+    padding: 24px 0px;
+    color: var(--paragraph);
+    font-family: inherit;
+    line-height: 1.4;
+    background: var(--cardBG);
+}
+
+.tabsContent h3 {
+    color: var(--headline);
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+// Tabs Button
+.tabsLink {
+    display: inline-block;
+    border-bottom: 2px solid #eee;
+    cursor: pointer;
+    color: var(--tabs-link);
+    padding: 14px 34px;
+    white-space: nowrap;
+    font-weight: var(--fw-regular);
+    transition: var(--transition-all);
+    font-size: var(--tabs-font-size);
+    &:hover {
+        color: var(--tabs-link-hover);
+    }
+}
+
+.tabsLink.active {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--tabs-link-active);
+}
+
+// Portfolio
+.tabsNavPortfolio {
+    @extend .tabsNav;
+    overflow: auto;
+    position: relative;
+}
+
+.tabsLinkPortfolio {
+    @extend .tabsLink;
+    &:hover {
+        color: var(--tabs-link-hover);
+    }
+
+    &:last-child {
+        padding: 14px 34px;
+    }
+
+    &.active {
+        border-bottom: 2px solid var(--primary-color);
+        color: var(--tabs-link-active);
+    }
+}
+@include respond(xl_desktop) {
+    .tabsNav {
+        overflow-x: auto;
+    }
+}

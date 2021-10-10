@@ -1,0 +1,185 @@
+// @use "../utils/mixins/" as *;
+@use "../utils/mixins" as *;
+
+:root {
+    // Typography
+
+    // Font size
+    --fs-xxl: 4rem;
+    --fs-xl: 3.8rem;
+    --fs-lg: 3rem;
+    --fs-md: 2.8rem;
+    --fs-sm: 2.4rem;
+    --fs-xs: 2.2rem;
+    // Font Family
+    --default-font: "Gramatika", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+        Fira Sans, Droid Sans, "Helvetica Neue", "sans-serif";
+
+    // Font Weight
+    --fw-light: 200; // 200
+    --fw-regular: 400; // 400
+    --fw-medium: 600; // 600
+    --fw-bold: 800; // 800
+    --fw-black: 900; // 900
+
+    // Default Font Size
+    --default-fs: 18px;
+
+    // Font Variables
+    // Hero Heading
+    --hero-heading: clamp(40px, 8vw, 80px);
+    --hero-caption: clamp(30px, 3.8vw, 40px);
+
+    // Portfolio Card Details
+    --portfolio-card-details-p: clamp(1.2em, 2vw, 20px);
+    --portfolio-card-details-h4: clamp(3em, 5vw, 5em);
+    --portfolio-card-shadow: 0 10px 30px -15px #bababa;
+
+    // Tabs
+    --tabs-font-size: 16px;
+
+    --container-width: 100%;
+    --hero-container: 100%;
+    --section-container: 100%;
+
+    // Colors
+    --white: #fff;
+    --primary-color: #6d72df;
+    --hero-background-color: #0d243c;
+    --night-mode-color: #0d243c;
+    --hero-button-color: #6d72df;
+    --hero-button-hover: #595ecd;
+
+    // Project Cards
+    --project-card-color: #fcfcfc;
+    --project-card-color-hover: #7179a8;
+    --project-card-box-shadow: 0 10px 30px -15px #bababa;
+    // Tabs
+    --tabs-link-active: #6d72df;
+    --tabs-link: #aaa;
+    --tabs-link-hover: #595ecd;
+
+    // Side Social Icons
+    --side-social-color: #6d72df;
+    --side-social-color-hover: #595ecd;
+    // --side-social-icons:
+
+    // Social Links Portfolio
+    --social-link-desktop-color: #000;
+    --social-link-mobile-color: #fff;
+
+    // Hover Icon Effect
+    --translateY: translateY(-3px);
+
+    // Transitions
+    --transition-all: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    --breakpoint-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    --breakpoint-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+        opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+
+    // Hover Transitions Cards
+    --filter-saturate: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    --filter-gray: gray;
+}
+
+// laptop 768px
+@include respond(laptop) {
+    :root {
+        --section-container: 990px;
+    }
+}
+
+// desktop 992px
+@include respond(desktop) {
+    :root {
+        --container-width: 1900px;
+        --hero-container: 1200px;
+        --section-container: 990px;
+    }
+}
+// xl-desktop 1200px
+@include respond(xl_desktop) {
+    :root {
+        --container-width: 1900px;
+        --hero-container: 1200px;
+        --section-container: 1080px;
+    }
+}
+
+// xxl-desktop 1400px
+@include respond(xxl_desktop) {
+    :root {
+        --container-width: 1900px;
+        --hero-container: 1440px;
+        --section-container: 1080px;
+    }
+}
+
+@include respond(xxxl_desktop) {
+    :root {
+        --container-width: 1900px;
+        --hero-container: 1440px;
+        --section-container: 1140px;
+    }
+}
+
+// Old Breakpoints
+// @include respond(laptop) {
+//     :root {
+//         --section-container: 990px;
+//     }
+// }
+
+// // desktop 1200px
+// @include respond(desktop) {
+//     :root {
+//         --container-width: 1900px;
+//         --hero-container: 1200px;
+//         --section-container: 990px;
+//     }
+// }
+// // xl-desktop 1600px
+// @include respond(xl_desktop) {
+//     :root {
+//         --container-width: 1900px;
+//         --hero-container: 1200px%;
+//         --section-container: 1200px;
+//     }
+// }
+
+// // xxl-desktop 2100px
+// @include respond(xxl_desktop) {
+//     :root {
+//         --container-width: 1900px;
+//         --hero-container: 1440px;
+//         --section-container: 1440px;
+//     }
+// }
+
+// Font Size
+.font-size {
+    &__xs {
+        font-size: var(--fs-xs);
+    }
+
+    &__sm {
+        font-size: var(--fs-sm);
+    }
+
+    &__md {
+        font-size: var(--fs-md);
+    }
+
+    &__lg {
+        font-size: var(--fs-lg);
+    }
+
+    &__xl {
+        font-size: var(--fs-xl);
+    }
+
+    &__xxl {
+        font-size: var(--fs-xxl);
+    }
+}

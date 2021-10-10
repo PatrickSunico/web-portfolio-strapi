@@ -1,0 +1,141 @@
+@use "../../styles/utils/mixins" as *;
+@use "sass:math";
+
+// Hero Container
+.heroContainer {
+    display: flex;
+    align-items: center;
+    max-width: var(--hero-container);
+    margin: 0 auto;
+    padding: 0;
+}
+
+// Section Containers
+.sectionContainer {
+    display: flex;
+    align-items: center;
+    max-width: var(--section-container);
+    margin: 0 auto;
+    padding: 0;
+}
+
+// Section Blocks
+.sectionBlock {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.marginTop {
+    margin-top: 3em;
+}
+
+.marginBottom {
+    margin-bottom: 3em;
+}
+
+.sectionHeaderLeft {
+    // margin: 2rem 0;
+
+    h2 {
+        font-weight: var(--fw-bold);
+        font-family: var(--default-font);
+        font-size: clamp(26px, 5vw, 32px);
+        text-transform: uppercase;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+        margin: 0;
+        width: 100%;
+        white-space: nowrap;
+
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            margin-left: 20px;
+            background-color: #e3e3e3;
+        }
+    }
+}
+
+.sectionHeaderRight {
+    // margin: 2rem 0;
+
+    h2 {
+        font-weight: var(--fw-bold);
+        font-family: var(--default-font);
+        font-size: clamp(26px, 5vw, 32px);
+        text-transform: uppercase;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+        margin: 0;
+        width: 100%;
+        white-space: nowrap;
+
+        &:before {
+            content: "";
+            display: block;
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            margin-right: 20px;
+            background-color: #e3e3e3;
+            // background-color: var(--lightest-navy);
+        }
+    }
+}
+
+// Layout Containers
+.container {
+    display: flex;
+    // align-items: center;
+    margin: 0 auto;
+    max-width: var(--container-width);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1.6em;
+}
+
+.containerFull {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@include respond(desktop) {
+    .marginTop {
+        margin-top: 10em;
+    }
+
+    .marginBottom {
+        margin-bottom: 10em;
+    }
+}
+
+@include respond(tablets) {
+    .sectionContainer {
+        padding: 0 3rem;
+    }
+
+    .heroContainer {
+        padding: 0 4rem;
+    }
+
+    // .sectionHeaderLeft,
+    // .sectionHeaderRight {
+    //     margin: 2rem 0;
+    // }
+}

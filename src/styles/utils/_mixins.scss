@@ -1,0 +1,94 @@
+$breakpoints: (
+    // "xs-mobile": 0,
+    // // 480
+    // "sm-mobile": 576px,
+    // // 720
+    // "md-tablets": 768px,
+    // // 960
+    // "lg-laptop": 992px,
+    // "desktop": 1200px,
+    // "xl-desktop": 1600px,
+    // "xxl-desktop": 2100px,
+    // Bootstrap Variables
+    "xs-mobile": 0,
+    // 480
+    "sm-mobile": 320px,
+    // 720
+    "md-tablets": 576px,
+    // 960
+    "lg-laptop": 768px,
+    "desktop": 992px,
+    "xl-desktop": 1200px,
+    "xxl-desktop": 1400px,
+    "xxxl-desktop": 1920px
+);
+@mixin respond($breakpoint) {
+    // $breakpoint is simply a variable that can have several values
+    /*
+        Small devices (landscape phones, 576px and up)
+        Medium devices (tablets, 768px and up
+        Large devices (desktops, 992px and up)
+        X-Large devices (large desktops, 1200px and up)
+        XX-Large devices (larger desktops, 1400px and up)
+    */
+
+    // Spacing Conditions
+    @if $breakpoint==xslgscreens {
+        @media only screen and (min-width: map-get($breakpoints, "xs-mobile")) and (min-width: map-get($breakpoints, "lg-laptop")) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==xsphones {
+        @media only screen and (min-width: map-get($breakpoints, "xs-mobile")) {
+            @content;
+        }
+    }
+
+    // 768px phablets or phones
+    @if $breakpoint==smphones {
+        @media only screen and (min-width: map-get($breakpoints, "sm-mobile")) {
+            @content;
+        }
+    }
+
+    // 992px tablets
+    @if $breakpoint==tablets {
+        @media only screen and (min-width: map-get($breakpoints, "md-tablets")) {
+            @content;
+        }
+    }
+
+    // 1200px for laptops
+    @if $breakpoint==laptop {
+        @media only screen and (min-width: map-get($breakpoints, "lg-laptop")) {
+            @content;
+        }
+    }
+
+    // 1600 for xl desktop screens
+    @if $breakpoint==desktop {
+        @media only screen and (min-width: map-get($breakpoints, "desktop")) {
+            @content;
+        }
+    }
+
+    // 1920 for xl desktop screens
+    @if $breakpoint==xl_desktop {
+        @media only screen and (min-width: map-get($breakpoints, "xl-desktop")) {
+            @content;
+        }
+    }
+
+    // For Extra Extra Large Screens
+    @if $breakpoint==xxl_desktop {
+        @media only screen and (min-width: map-get($breakpoints, "xxl-desktop")) {
+            @content;
+        }
+    }
+    @if $breakpoint==xxxl_desktop {
+        @media only screen and (min-width: map-get($breakpoints, "xxxl-desktop")) {
+            @content;
+        }
+    }
+}

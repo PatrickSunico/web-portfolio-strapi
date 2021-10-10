@@ -1,0 +1,83 @@
+@use "../../../styles/utils/mixins" as *;
+
+.projectCard {
+    // box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    transition: var(--transition);
+    padding: 100px 30px;
+    background: var(--project-card-color);
+    overflow: hidden; /* NEW */
+    min-width: 0; /* NEW; needed for Firefox */
+
+    transition: var(--transition-all);
+    box-shadow: var(--project-card-box-shadow);
+    -webkit-box-shadow: var(--project-card-box-shadow);
+    -moz-box-shadow: var(--project-card-box-shadow);
+
+    &:hover {
+        transform: translateY(-3px);
+        > .projectNumber {
+            color: var(--primary-color);
+        }
+    }
+}
+.projectDetails {
+    z-index: 2;
+    p {
+        font-size: 16;
+        font-weight: var(--fw-light);
+        font-family: var(--default-font);
+        color: #000;
+    }
+
+    h5 {
+        font-size: 30px;
+        font-weight: var(--fw-black);
+        font-family: var(--default-font);
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            a {
+                display: flex;
+                transition: var(--transition-all);
+                svg {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &:hover {
+                    transform: var(--translateY);
+                }
+            }
+        }
+    }
+}
+
+.projectNumber {
+    position: absolute;
+    font-family: var(--default-font);
+    font-weight: var(--fw-black);
+    line-height: 1;
+    // font-size: 120px;
+    font-size: clamp(10em, 5vw, 8em);
+
+    z-index: 1;
+    right: 20px;
+    bottom: 20px;
+    color: #efefef;
+    transition: var(--transition-all);
+}

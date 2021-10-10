@@ -1,0 +1,64 @@
+@use "../../styles/utils/mixins" as *;
+
+.socialLinksWrapper {
+    position: relative;
+    width: 1900px;
+    margin: 0 auto;
+    display: none;
+    .socialList {
+        width: 40px;
+        position: fixed;
+        bottom: 0px;
+        left: 1em;
+        right: auto;
+        z-index: 10;
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0px auto;
+            background-color: var(--side-social-color);
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-all);
+            &:hover {
+                transform: var(--translateY);
+            }
+            svg {
+                path,
+                rect {
+                    stroke-width: 0;
+                    fill: var(--side-social-color);
+                    stroke: var(--side-social-color);
+                }
+                &:hover {
+                    path,
+                    rect {
+                        fill: var(--side-social-color-hover);
+                        stroke: var(--side-social-color-hover);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond(tablets) {
+    .socialLinksWrapper {
+        display: block;
+        .socialList {
+            // left: 335px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+// Portfolio Tabs
+
+.portfolioContentWrapper {
+    // margin: 3em 0;
+    // margin-bottom: 5em;
+}
+.tabsList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px 0;
+    font-family: var(--default-font);
+    overflow-x: scroll;
+}
+
+.test {
+    color: red;
+}

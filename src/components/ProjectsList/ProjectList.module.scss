@@ -1,0 +1,27 @@
+@use "../../styles/utils/mixins" as *;
+
+.portfolioParent {
+    // background-color: var(--night-mode-color);
+    // padding: 10em 0;
+    // * {
+    //     color: white;
+    // }
+}
+
+.projectsGrid {
+    // list-style: none;
+    // list-style: none;
+    // padding: 0px;
+    margin: 50px 0;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    // gap: 15px;
+    // position: relative;
+    display: grid;
+    background: #fff;
+    grid-gap: 15px;
+    min-height: 0; /* NEW */
+    min-width: 0; /* NEW; needed for Firefox */
+}

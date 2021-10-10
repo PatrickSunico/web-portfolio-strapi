@@ -1,0 +1,68 @@
+@use "../../../styles/utils/mixins" as *;
+
+.descriptionContainer {
+    margin: 40px 0;
+}
+
+.portraitWrapper {
+    margin: 0 auto;
+
+    .portraitImage {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.descriptionWrapper {
+    .description {
+        p {
+            padding: 30px 0;
+            font-size: 18px;
+            font-family: var(--default-font);
+            font-weight: var(--fw-light);
+        }
+    }
+}
+
+.skills {
+    h3 {
+        font-size: 20px;
+        font-family: var(--default-font);
+        text-transform: uppercase;
+        font-weight: var(--fw-bold);
+        margin-bottom: 10px;
+    }
+
+    ul {
+        li {
+            list-style-type: none;
+            font-family: var(--default-font);
+            font-weight: var(--fw-light);
+            &:before {
+                display: inline-block;
+                content: "-";
+                width: 1em;
+            }
+        }
+        li a {
+        }
+    }
+}
+
+@include respond(laptop) {
+    .aboutFlexWrapper {
+        flex-direction: row;
+    }
+
+    .portraitWrapper {
+        // max-width: 300px;
+        // margin: 0 20px;
+    }
+
+    .descriptionWrapper {
+        padding: 0 2em;
+        .description p {
+            padding: 0;
+        }
+    }
+}

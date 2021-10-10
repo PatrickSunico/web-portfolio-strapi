@@ -1,0 +1,237 @@
+@use "../../styles/utils/mixins" as *;
+
+.contactParent {
+    // margin: 5em 0;
+    background-color: #0b1d2f;
+    // height: calc(100vh - 300px);
+}
+
+.contactContainer {
+    padding: 3em 0;
+    transform: var(--breakpoint-transform);
+    transition: var(--breakpoint-transition);
+}
+
+.gridFormContainer {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+
+    // gap: 100px;
+    // padding: 30px;
+    // First Grid
+    .gridContent {
+        grid-area: 1/1;
+        transform: var(--breakpoint-transform);
+        transition: var(--breakpoint-transition);
+        h1 {
+            font-weight: var(--fw-bold);
+            font-family: var(--default-font);
+            font-size: clamp(30px, 4.5vw, 4em);
+            // text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            width: 100%;
+            line-height: 1;
+            color: #fff;
+        }
+
+        p {
+            font-weight: var(--fw-light);
+            font-family: var(--default-font);
+
+            font-size: clamp(18px, 1vw, 0.2em);
+            // text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            width: 100%;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .gridForm {
+            margin: 2em 0;
+
+            padding: 0;
+
+            input {
+                appearance: none;
+                border-radius: 0;
+                font-family: var(--default-font);
+                font-weight: var(--fw-light);
+                color: #fff;
+            }
+
+            .input {
+                display: flex;
+                flex-direction: column-reverse;
+                position: relative;
+                padding-top: 1.5rem;
+                color: #fff;
+                & + .input {
+                    margin-top: 1.5rem;
+                }
+            }
+
+            .inputLabel {
+                color: #fff;
+                position: absolute;
+                top: 1.5rem;
+                transition: 0.25s ease;
+                font-family: var(--default-font);
+            }
+
+            .inputField {
+                border: 0;
+                z-index: 1;
+                background-color: transparent;
+                border-bottom: 2px solid #eee;
+                font: inherit;
+                font-size: 1.125rem;
+                padding: 0.25rem 0;
+                resize: none;
+
+                &:focus,
+                &:valid {
+                    color: #fff;
+                    outline: 0;
+                    font-family: var(--default-font);
+
+                    border-bottom-color: #6658d3;
+                    & + .inputLabel {
+                        color: #6658d3;
+                        transform: translateY(-1.5rem);
+                    }
+                }
+            }
+        }
+    }
+    // Second Grid
+    .gridDetails {
+        display: grid;
+        grid-template-columns: min-content min-content;
+        grid-template-rows: min-content min-content;
+        gap: 0px 0px;
+        grid-area: 1/2;
+        margin: 20px 0px;
+
+        .details {
+            font-family: var(--default-font);
+            margin: 1em 0;
+            display: flex;
+            flex-direction: column;
+            grid-area: 1/3;
+
+            // Number
+            & + .details {
+                grid-area: 2/3;
+            }
+
+            // Links
+            & + .details + .details {
+                grid-area: 3/3;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+
+                    li {
+                        transition: var(--transition-all);
+                        padding: 0 12px;
+                        &:hover {
+                            transform: var(--translateY);
+                        }
+                        a {
+                            svg {
+                                display: flex;
+                                align-items: center;
+                                // height: 60px;
+                                // width: 60px;
+                                path,
+                                rect {
+                                    stroke-width: 0;
+                                    fill: var(--side-social-color);
+                                    stroke: var(--side-social-color);
+                                }
+                                &:hover {
+                                    path,
+                                    rect {
+                                        fill: var(--side-social-color-hover);
+                                        stroke: var(--side-social-color-hover);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            span {
+                font-size: 16px;
+                color: var(--primary-color);
+                font-weight: var(--fw-regular);
+                text-transform: uppercase;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: #fff;
+                font-weight: var(--fw-medium);
+                font-size: 24px;
+                line-height: 1;
+                text-decoration: none;
+            }
+
+            p {
+                color: #fff;
+                font-weight: var(--fw-medium);
+                font-size: 24px;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--fw-light);
+    font-family: var(--default-font);
+    color: white;
+
+    a {
+        cursor: pointer;
+        margin: 0px 5px;
+        color: var(--primary-color);
+        transition: var(--transition-all);
+
+        &:hover {
+            font-weight: var(--fw-medium);
+        }
+    }
+}
+
+@include respond(desktop) {
+    .gridFormContainer {
+        display: grid;
+        grid-template-columns: 6fr 2fr;
+        gap: 10%;
+        // padding: 30px;
+    }
+
+    .gridDetails {
+        margin: 50px 0px;
+    }
+
+    .gridFormContainer {
+        .gridContent {
+            .gridForm {
+                padding: 2rem 0;
+            }
+        }
+    }
+}

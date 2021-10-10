@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Gramatika-Light";
+    font-weight: 200;
+    src: url("Gramatika-Light.ttf") format("ttf");
+}
+
+/* Regular */
+@font-face {
+    font-family: "Gramatika-Regular";
+    font-weight: 200;
+    src: url("Gramatika-Regular.ttf") format("ttf");
+}
+
+/* Medium */
+@font-face {
+    font-family: "Gramatika-Medium";
+    font-weight: 200;
+    src: url("Gramatika-Medium.ttf") format("ttf");
+}
+
+/* Black */
+@font-face {
+    font-family: "Gramatika-Black";
+    font-weight: 200;
+    src: url("Gramatika-Black.ttf") format("ttf");
+}
