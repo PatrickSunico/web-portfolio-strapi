@@ -1,7 +1,10 @@
 import React from "react"
 import * as classes from "./About.module.scss"
 import AboutDescription from "./AboutDescription/AboutDescription"
-// import Experience from "./Experience/Experience"
+
+// import { aboutSectionPortrait } from "../../hooks/aboutSectionPortrait"
+// import { useAboutQuery } from "../../hooks/useAboutQuery"
+// import aboutData from "../../hooks/useAboutQuery"
 
 const About = () => {
   return (

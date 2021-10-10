@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import * as classes from "./ProjectCard.module.scss"
 
 // import LinkedIn from "../../assets/i\cons/LinkedInFooter.svg"

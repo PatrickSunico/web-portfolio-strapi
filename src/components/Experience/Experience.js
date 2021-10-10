@@ -7,8 +7,17 @@ import { workHistory } from "../../data/workHistory"
 import ExperienceTab from "./ExperienceTab/ExperienceTab"
 import ExperienceMenu from "./ExperienceMenu/ExperienceMenu"
 
+import { useExperienceQuery } from "../../hooks/useExperienceQuery"
 // Parent
 const Experience = () => {
+  const experienceQuery = useExperienceQuery()
+  const experienceList = experienceQuery.experiences.edges
+
+  // Companies
+  const companyQuery = useExperienceQuery()
+  const companies = companyQuery.companies.edges
+  console.log(companies)
+
   const [activeTabId, setActiveTabId] = useState(workHistory[0].id) //props.workArray[0].id
   const activeTab = useMemo(
     () => workHistory.find(tab => tab.id === activeTabId),

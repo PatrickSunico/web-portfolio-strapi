@@ -14,6 +14,7 @@ import Experience from "../components/Experience/Experience"
 import ProjectList from "../components/ProjectsList/ProjectList"
 
 const IndexPage = props => {
+  console.log(props)
   return (
     <Layout pageTitle="Home Page">
       <Seo title="Home" />

@@ -2,9 +2,12 @@ import React from "react"
 import * as classes from "./AboutDescription.module.scss"
 // ../../images/Portrait.png
 // import portrait from ".."
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { DesignSkills, DevelopmentSkills } from "../../../data/SkillsData"
+
+// Data
+import { useAboutQuery } from "../../../hooks/useAboutQuery"
 
 const Description = () => {
   const renderDesign = DesignSkills.map(({ skills }, index) => (
@@ -18,6 +21,9 @@ const Description = () => {
     </li>
   ))
 
+  // About Section Query
+  const aboutQuery = useAboutQuery()
+  const portrait = getImage(aboutQuery.portrait)
   return (
     <>
       <div className="sectionHeaderLeft">
@@ -27,10 +33,9 @@ const Description = () => {
         <div
           className={`${classes["portraitWrapper"]} col col-sm-8 col-md-4 col-lg-3 col-xl-3`}
         >
-          <StaticImage
-            src="../../../images/Portrait.png"
+          <GatsbyImage
+            image={portrait}
             alt="Patrick Portrait"
-            width={400}
             className={classes["image"]}
           />
         </div>

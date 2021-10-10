@@ -33,7 +33,6 @@ const Layout = ({ pageTitle, children }) => {
     </>
   )
 }
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }

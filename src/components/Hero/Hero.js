@@ -1,11 +1,7 @@
 import React from "react"
 import * as classes from "./Hero.module.scss"
 
-import { Link, useStaticQuery, graphql } from "gatsby"
-
-import Button from "../UI/Button"
 import AnchorButton from "../UI/AnchorButton"
-import Layout from "../layout"
 
 const Hero = () => {
   return (

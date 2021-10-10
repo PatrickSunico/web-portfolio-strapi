@@ -15,8 +15,7 @@ const PortfolioCard = props => {
   return (
     <>
       {/* Portfolio Cards */}
-
-      <a className={classes["portfolioCard"]}>
+      <div className={classes["portfolioCard"]}>
         <div className={classes["content"]}>
           <div className={`${classes["details"]}`}>
             <p>UI, UX, Mobile App</p>
@@ -64,7 +63,7 @@ const PortfolioCard = props => {
             className={classes["image"]}
           />
         </div>
-      </a>
+      </div>
     </>
   )
 }
