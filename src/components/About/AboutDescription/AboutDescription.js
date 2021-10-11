@@ -1,10 +1,9 @@
 import React from "react"
 import * as classes from "./AboutDescription.module.scss"
-// ../../images/Portrait.png
-// import portrait from ".."
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import { DesignSkills, DevelopmentSkills } from "../../../data/SkillsData"
+import DOMPurify, { sanitize } from "dompurify"
+
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // Data
 import { useAboutQuery } from "../../../hooks/useAboutQuery"
@@ -47,9 +46,12 @@ const Description = () => {
           className={`${classes["descriptionWrapper"]} col col-sm-12 col-md-8 col-lg-9 col-xl-9`}
         >
           {/* Description */}
-          <div className={`${classes["description"]}`}>
-            <p>{about.about_description} </p>
-          </div>
+          <div
+            className={`${classes["description"]}`}
+            dangerouslySetInnerHTML={{
+              __html: about.about_description,
+            }}
+          />
 
           {/* Skills */}
           <div className={`${classes["skills"]} row mt-30`}>
@@ -60,9 +62,7 @@ const Description = () => {
 
             <div className="col col-xs-12 col-sm-6 col-md-7 col-lg-4 col-xl-3">
               <h3>Development</h3>
-              <ul className={classes["developmentColumn"]}>
-                {renderDevelopment}
-              </ul>
+              <ul className={classes[""]}>{renderDevelopment}</ul>
             </div>
           </div>
         </div>

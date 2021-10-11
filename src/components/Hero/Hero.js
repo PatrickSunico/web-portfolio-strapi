@@ -3,35 +3,37 @@ import * as classes from "./Hero.module.scss"
 
 import AnchorButton from "../UI/AnchorButton"
 
+// import { useAboutQuery } from "../../../hooks/useAboutQuery"
+import { useHeroDataQuery } from "../../hooks/useHeroDataQuery"
+
 const Hero = () => {
+  const heroQuery = useHeroDataQuery()
+  const heroData = heroQuery.heroDetails.edges[0].node
+
+  const {
+    headline_title,
+    headline_description,
+    headline_caption,
+    id,
+    strapiId,
+  } = heroData
+
   return (
     <div className={classes["hero"]}>
       <div className="heroContainer">
         <div className="container">
           <div className="row">
             <div className="sectionBlock flex-direction-column">
-              <h2 className={classes["heroHeading"]}>Patrick Sunico</h2>
+              <h2 className={classes["heroHeading"]}>{headline_title}</h2>
               <p className={classes["heroCaption"]}>
-                Frontend Developer & UI Designer
+                {headline_caption}
+                {/* Frontend Developer & UI Designer */}
               </p>
 
               <div
                 className={`${classes["heroDescription"]} col-md-6 col-xl-8`}
-              >
-                <p>
-                  I’m a software engineer specializing in building (and
-                  occasionally designing) exceptional digital experiences.
-                  Currently, I’m focused on building accessible, human-centered
-                  products at
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://catalyst.world/"
-                  >
-                    Catalyst
-                  </a>
-                </p>
-              </div>
+                dangerouslySetInnerHTML={{ __html: headline_description }}
+              ></div>
 
               <AnchorButton classNames={`button`}> My Resume</AnchorButton>
             </div>
