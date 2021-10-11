@@ -10,13 +10,7 @@ const Hero = () => {
   const heroQuery = useHeroDataQuery()
   const heroData = heroQuery.heroDetails.edges[0].node
 
-  const {
-    headline_title,
-    headline_description,
-    headline_caption,
-    id,
-    strapiId,
-  } = heroData
+  const { headline_title, headline_description, headline_caption } = heroData
 
   return (
     <div className={classes["hero"]}>
@@ -25,16 +19,11 @@ const Hero = () => {
           <div className="row">
             <div className="sectionBlock flex-direction-column">
               <h2 className={classes["heroHeading"]}>{headline_title}</h2>
-              <p className={classes["heroCaption"]}>
-                {headline_caption}
-                {/* Frontend Developer & UI Designer */}
-              </p>
-
+              <p className={classes["heroCaption"]}>{headline_caption}</p>
               <div
                 className={`${classes["heroDescription"]} col-md-6 col-xl-8`}
                 dangerouslySetInnerHTML={{ __html: headline_description }}
               ></div>
-
               <AnchorButton classNames={`button`}> My Resume</AnchorButton>
             </div>
           </div>
