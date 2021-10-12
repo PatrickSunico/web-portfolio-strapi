@@ -47,7 +47,10 @@ module.exports = {
       options: {
         apiURL: `http://localhost:8082`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`experiences`, `hero-details`, `details`, `projects`],
+        collectionTypes: [`experiences`, `portfolios`],
+        singleTypes: [`hero`, `about`],
+
+        // collectionTypes: [`experiences`, `hero-details`, `details`, `projects`],
         // collectionTypes: [`hero-details`, `experiences`, `details`],
         // singleTypes: [`home-page`, `contact`],
       },

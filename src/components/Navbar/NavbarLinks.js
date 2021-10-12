@@ -5,7 +5,6 @@ import * as classes from "./Navbar.module.scss"
 
 // Data
 import { MenuData } from "../../data/MenuData"
-// import { useMenuQuery } from "../../hooks/useMenuQuery"
 
 const NavbarLinks = () => {
   return (

@@ -3,14 +3,14 @@ import * as classes from "./Hero.module.scss"
 
 import AnchorButton from "../UI/AnchorButton"
 
-// import { useAboutQuery } from "../../../hooks/useAboutQuery"
 import { useHeroDataQuery } from "../../hooks/useHeroDataQuery"
 
 const Hero = () => {
   const heroQuery = useHeroDataQuery()
-  const heroData = heroQuery.heroDetails.edges[0].node
+  const heroData = heroQuery.heroDetails.nodes[0].HeroSection
+  console.log(heroData)
 
-  const { headline_title, headline_description, headline_caption } = heroData
+  const { headline, secondary_headline, caption } = heroData
 
   return (
     <div className={classes["hero"]}>
@@ -18,11 +18,11 @@ const Hero = () => {
         <div className="container">
           <div className="row">
             <div className="sectionBlock flex-direction-column">
-              <h2 className={classes["heroHeading"]}>{headline_title}</h2>
-              <p className={classes["heroCaption"]}>{headline_caption}</p>
+              <h2 className={classes["heroHeading"]}>{headline}</h2>
+              <p className={classes["heroCaption"]}>{secondary_headline}</p>
               <div
                 className={`${classes["heroDescription"]} col-md-6 col-xl-8`}
-                dangerouslySetInnerHTML={{ __html: headline_description }}
+                dangerouslySetInnerHTML={{ __html: caption }}
               ></div>
               <AnchorButton classNames={`button`}> My Resume</AnchorButton>
             </div>

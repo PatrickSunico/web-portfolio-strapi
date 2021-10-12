@@ -6,25 +6,25 @@ import PortfolioMenu from "./PortfolioMenu/PortfolioMenu"
 import PortfolioTab from "./PortfolioTab/PortfolioTab"
 
 // Data
-import { content, menu } from "../../data/portfolioData"
+// import { content, menu } from "../../data/portfolioData"
+// // import { useProjectQuery } from "../../hooks/useProjectQuery"
+
 // import { useProjectQuery } from "../../hooks/useProjectQuery"
 
-import { useProjectQuery } from "../../hooks/useProjectQuery"
-
 const Portfolio = () => {
-  const projectQuery = useProjectQuery()
-  const projects = projectQuery.project_cards.edges
+  // const projectQuery = useProjectQuery()
+  // const projects = projectQuery.project_cards.edges
 
-  const [activeMenuType, setActiveMenuType] = useState(menu[0].type)
+  // const [activeMenuType, setActiveMenuType] = useState(menu[0].type)
 
-  const activeTab = useMemo(
-    () => menu.find(menu => menu.type === activeMenuType),
-    [activeMenuType, menu]
-  )
+  // const activeTab = useMemo(
+  //   () => menu.find(menu => menu.type === activeMenuType),
+  //   [activeMenuType, menu]
+  // )
 
-  const filterProjects = projects.filter(
-    project => project.node.projectType === activeMenuType
-  )
+  // const filterProjects = projects.filter(
+  //   project => project.node.projectType === activeMenuType
+  // )
 
   return (
     <div className={classes["portfolioParent"]}>
@@ -35,14 +35,14 @@ const Portfolio = () => {
           </div>
 
           {/* Tabs Here */}
-          <PortfolioMenu
+          {/* <PortfolioMenu
             tabs={menu}
             onNavClick={setActiveMenuType}
             activeMenuType={activeMenuType}
-          />
+          /> */}
 
           {/* Tab Content */}
-          <PortfolioTab tab={activeTab} contents={filterProjects} />
+          {/* <PortfolioTab tab={activeTab} contents={filterProjects} /> */}
         </div>
       </div>
     </div>
