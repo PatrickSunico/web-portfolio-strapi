@@ -8,8 +8,6 @@ import { useHeroDataQuery } from "../../hooks/useHeroDataQuery"
 const Hero = () => {
   const heroQuery = useHeroDataQuery()
   const heroData = heroQuery.heroDetails.nodes[0].HeroSection
-  console.log(heroData)
-
   const { headline, secondary_headline, caption } = heroData
 
   return (

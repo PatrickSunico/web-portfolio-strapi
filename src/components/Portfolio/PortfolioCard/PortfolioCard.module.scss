@@ -100,6 +100,7 @@
         .categories {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             // justify-content: space-between;
         }
         p {
@@ -107,8 +108,9 @@
             font-weight: var(--fw-light);
             font-family: var(--default-font);
             font-size: var(--portfolio-card-details-p);
-            margin-right: 10px;
             color: #fff;
+
+            margin-right: 10px;
         }
 
         h4 {
@@ -133,6 +135,7 @@
     .socialLinks {
         display: flex;
         padding: 10px 0;
+        // flex-wrap: nowrap;
 
         .link {
             display: flex;

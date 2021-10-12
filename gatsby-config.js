@@ -49,10 +49,6 @@ module.exports = {
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`experiences`, `portfolios`],
         singleTypes: [`hero`, `about`],
-
-        // collectionTypes: [`experiences`, `hero-details`, `details`, `projects`],
-        // collectionTypes: [`hero-details`, `experiences`, `details`],
-        // singleTypes: [`home-page`, `contact`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

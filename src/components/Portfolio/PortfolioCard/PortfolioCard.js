@@ -11,11 +11,45 @@ import AndroidLink from "../../../assets/icons/AndroidLink.svg"
 import AppleLink from "../../../assets/icons/AppleLink.svg"
 
 const PortfolioCard = props => {
+  console.log(props)
   const { id, projectDetails, projectTitle, projectType, slug, strapiId } =
     props.content
 
-  const { projectCategories, projectTools, socialLinks } = projectDetails
-
+  const { projectCategories, socialLinks } = projectDetails
+  const renderSocial = links => {
+    return links.map(({ availableLinks, socialLinks }) => (
+      <>
+        {availableLinks === "Behance" && (
+          <li className={classes["link"]}>
+            <Link to={socialLinks}>
+              <Behance />
+            </Link>
+          </li>
+        )}
+        {availableLinks === "Github" && (
+          <li className={classes["link"]}>
+            <Link to={socialLinks}>
+              <Github />
+            </Link>
+          </li>
+        )}
+        {availableLinks === "WebLink" && (
+          <li className={classes["link"]}>
+            <Link to={socialLinks}>
+              <WebLink />
+            </Link>
+          </li>
+        )}
+        {availableLinks === "AndroidLink" && (
+          <li className={classes["link"]}>
+            <Link to={socialLinks}>
+              <AndroidLink />
+            </Link>
+          </li>
+        )}
+      </>
+    ))
+  }
   return (
     <>
       {/* Portfolio Cards */}
@@ -35,37 +69,7 @@ const PortfolioCard = props => {
             </Link>
 
             <ul className={classes["socialLinks"]}>
-              {/* {socialLinks.map(({availableLinks, socialLink, id}) => (
-                <li>
-
-                </li>
-              ))} */}
-
-              {/* <li className={classes["link"]}>
-                <Link to="/">
-                  <Behance />
-                </Link>
-              </li>
-              <li className={classes["link"]}>
-                <Link to="/">
-                  <WebLink />
-                </Link>
-              </li>
-              <li className={classes["link"]}>
-                <Link to="/">
-                  <Github />
-                </Link>
-              </li>
-              <li className={classes["link"]}>
-                <Link to="/">
-                  <AndroidLink />
-                </Link>
-              </li>
-              <li className={classes["link"]}>
-                <Link to="/">
-                  <AppleLink />
-                </Link>
-              </li> */}
+              {renderSocial(socialLinks)}
             </ul>
           </div>
         </div>
