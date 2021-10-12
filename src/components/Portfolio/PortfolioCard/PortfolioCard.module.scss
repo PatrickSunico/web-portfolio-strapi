@@ -97,13 +97,17 @@
     .details {
         position: relative;
         z-index: 2;
-
+        .categories {
+            display: flex;
+            align-items: center;
+            // justify-content: space-between;
+        }
         p {
             font-size: 20px;
             font-weight: var(--fw-light);
             font-family: var(--default-font);
             font-size: var(--portfolio-card-details-p);
-
+            margin-right: 10px;
             color: #fff;
         }
 

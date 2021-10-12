@@ -2,14 +2,14 @@ export const content = [
   {
     id: 1,
     title: "Bedspacr",
-    type: "Web Development",
+    type: "Web",
     category: "UI, UX, Web Design",
     links: [{ type: "LinkedIn" }, { type: "Behance" }],
   },
   {
     id: 2,
     title: "Intlq",
-    type: "Web Development",
+    type: "Web",
     category: "UI, UX, Web Design",
     links: [{ type: "LinkedIn" }],
   },
@@ -17,7 +17,7 @@ export const content = [
   {
     id: 4,
     title: "Sanam",
-    type: "Web Development",
+    type: "Web",
     category: "UI, UX, Web Design",
     links: [{ type: "LinkedIn" }, { type: "Behance" }],
   },
@@ -25,12 +25,12 @@ export const content = [
   {
     id: 2,
     description: "Mobile",
-    type: "Mobile Design",
+    type: "Mobile",
     category: "UI, UX, Mobile App",
   },
 ]
 
 export const menu = [
-  { id: 1, title: "Web Development", type: "Web Development" },
-  { id: 2, title: "Mobile Design", type: "Mobile Design" },
+  { id: 1, title: "Web Development", type: "Web" },
+  { id: 2, title: "Mobile Design", type: "Mobile" },
 ]

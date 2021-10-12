@@ -11,9 +11,9 @@ const PortfolioMenu = props => {
           <li key={index} className={tabStyles["tabsItem"]}>
             <a
               className={`${tabStyles.tabsLinkPortfolio} ${
-                props.activeMenuId === item.id && tabStyles.active
+                props.activeMenuType === item.type && tabStyles.active
               }`}
-              onClick={() => props.onNavClick(item.id)}
+              onClick={() => props.onNavClick(item.type)}
             >
               {item.title}
             </a>

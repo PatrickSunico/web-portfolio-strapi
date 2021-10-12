@@ -7,17 +7,23 @@ import PortfolioTab from "./PortfolioTab/PortfolioTab"
 
 // Data
 import { content, menu } from "../../data/portfolioData"
+// import { useProjectQuery } from "../../hooks/useProjectQuery"
+
+import { useProjectQuery } from "../../hooks/useProjectQuery"
 
 const Portfolio = () => {
-  const [activeMenuId, setActiveMenuId] = useState(content[0].id)
+  const projectQuery = useProjectQuery()
+  const projects = projectQuery.project_cards.edges
+
+  const [activeMenuType, setActiveMenuType] = useState(menu[0].type)
 
   const activeTab = useMemo(
-    () => menu.find(menu => menu.id === activeMenuId),
-    [activeMenuId, menu]
+    () => menu.find(menu => menu.type === activeMenuType),
+    [activeMenuType, menu]
   )
 
-  const filteredContent = content.filter(
-    project => project.type === activeTab.type
+  const filterProjects = projects.filter(
+    project => project.node.projectType === activeMenuType
   )
 
   return (
@@ -31,12 +37,12 @@ const Portfolio = () => {
           {/* Tabs Here */}
           <PortfolioMenu
             tabs={menu}
-            onNavClick={setActiveMenuId}
-            activeMenuId={activeMenuId}
+            onNavClick={setActiveMenuType}
+            activeMenuType={activeMenuType}
           />
 
           {/* Tab Content */}
-          <PortfolioTab tab={activeTab} contents={filteredContent} />
+          <PortfolioTab tab={activeTab} contents={filterProjects} />
         </div>
       </div>
     </div>
