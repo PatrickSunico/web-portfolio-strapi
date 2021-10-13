@@ -133,17 +133,17 @@
     }
 
     .socialLinks {
-        display: flex;
-        padding: 10px 0;
+        // display: flex;
+        // padding: 10px 0;
         // flex-wrap: nowrap;
 
         .link {
             display: flex;
             align-items: center;
             justify-content: center;
-            // padding: 0;
+
             width: 40px;
-            margin: 0 auto;
+
             height: 40px;
 
             // social Links hover
@@ -245,8 +245,8 @@
 
         // Social Links
         .socialLinks {
-            display: grid;
-            grid-template-columns: repeat(4, 5fr);
+            // display: grid;
+            // grid-template-columns: repeat(4, 5fr);
             .link {
                 grid-column: 2;
                 display: flex;
