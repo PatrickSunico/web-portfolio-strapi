@@ -48,13 +48,12 @@
         }
 
         a {
-            margin-left: 5px;
-            font-weight: var(--fw-light);
+            font-weight: var(--fw-medium);
             color: var(--primary-color);
             text-decoration: none;
             transition: var(--transition-all);
             &:hover {
-                font-weight: var(--fw-medium);
+                // font-weight: var(--fw-medium);
                 color: var(--hero-button-hover);
             }
         }

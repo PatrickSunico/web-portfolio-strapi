@@ -45,15 +45,22 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:8082`,
+        apiURL: `https://gentle-fortress-28010.herokuapp.com`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`experiences`, `portfolios`],
         singleTypes: [`hero`, `about`],
       },
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "Test", // Created Node type name
+        imagePath: "imgUrl", // The image url name in test node type
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
-lll

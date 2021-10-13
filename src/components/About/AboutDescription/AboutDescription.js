@@ -58,7 +58,7 @@ const Description = () => {
               <ul>{renderDesign}</ul>
             </div>
 
-            <div className="col col-xs-12 col-sm-6 col-md-7 col-lg-4 col-xl-3">
+            <div className="col col-xs-12 col-sm-6 col-md-7 col-lg-4 col-xl-4">
               <h3>Development</h3>
               <ul className="">{renderDevelopment}</ul>
             </div>

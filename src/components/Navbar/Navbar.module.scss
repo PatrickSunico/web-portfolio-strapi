@@ -6,14 +6,14 @@
     width: 100%;
     z-index: 3;
     height: 60px;
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
     transition: var(--transition-all);
 
     &.active {
         background-color: rgba(10, 25, 47, 1);
         // box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-        // backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         transition: var(--transition-all);
         backdrop-filter: blur(10px);
         display: flex;
@@ -48,7 +48,6 @@
             padding: 10px;
             line-height: 1.6;
             color: #fff;
-            margin: 0 20px;
             font-size: var(--navbar-fs);
         }
     }

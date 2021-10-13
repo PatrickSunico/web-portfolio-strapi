@@ -5,6 +5,15 @@ export const useProjectQuery = () => {
       project_cards: allStrapiPortfolios {
         edges {
           node {
+            CardCover {
+              id
+              url
+              provider
+              name
+              localFile {
+                url
+              }
+            }
             projectDetails {
               id
               projectCategories {

@@ -3,38 +3,38 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 
-const PortfolioTemplate = ({ data }) => (
-  <Layout>
-    <h1>{data.strapiArticle.title}</h1>
-    <p>
-      by{" "}
-      <Link to={`/authors/User_${data.strapiArticle.author.id}`}>
-        {data.strapiArticle.author.username}
-      </Link>
-    </p>
-    <Img fixed={data.strapiArticle.image.childImageSharp.fixed} />
-    <p>{data.strapiArticle.content}</p>
-  </Layout>
-)
+// const PortfolioTemplate = ({ data }) => (
+//   <Layout>
+//     <h1>{data.strapiArticle.title}</h1>
+//     <p>
+//       by{" "}
+//       <Link to={`/authors/User_${data.strapiArticle.author.id}`}>
+//         {data.strapiArticle.author.username}
+//       </Link>
+//     </p>
+//     <Img fixed={data.strapiArticle.image.childImageSharp.fixed} />
+//     <p>{data.strapiArticle.content}</p>
+//   </Layout>
+// )
 
-export default PortfolioTemplate
+// export default PortfolioTemplate
 
-export const query = graphql`
-  query ArticleTemplate($id: String!) {
-    strapiArticle(id: { eq: $id }) {
-      title
-      content
-      image {
-        childImageSharp {
-          fixed(width: 200, height: 125) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      author {
-        id
-        username
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query ArticleTemplate($id: String!) {
+//     strapiArticle(id: { eq: $id }) {
+//       title
+//       content
+//       image {
+//         childImageSharp {
+//           fixed(width: 200, height: 125) {
+//             ...GatsbyImageSharpFixed
+//           }
+//         }
+//       }
+//       author {
+//         id
+//         username
+//       }
+//     }
+//   }
+// `

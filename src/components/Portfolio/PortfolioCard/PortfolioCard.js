@@ -11,65 +11,65 @@ import AndroidLink from "../../../assets/icons/AndroidLink.svg"
 import AppleLink from "../../../assets/icons/AppleLink.svg"
 
 const PortfolioCard = props => {
-  console.log(props)
-  const { id, projectDetails, projectTitle, projectType, slug, strapiId } =
-    props.content
+  const {
+    id,
+    projectDetails,
+    projectTitle,
+    projectType,
+    slug,
+    strapiId,
+    CardCover,
+  } = props.content
+
+  console.log(CardCover)
 
   const { projectCategories, socialLinks } = projectDetails
-  const renderSocial = links => {
-    return links.map(({ availableLinks, socialLinks }) => (
-      <>
-        {availableLinks === "Behance" && (
-          <li className={classes["link"]}>
-            <Link to={socialLinks}>
-              <Behance />
-            </Link>
-          </li>
-        )}
-        {availableLinks === "Github" && (
-          <li className={classes["link"]}>
-            <Link to={socialLinks}>
-              <Github />
-            </Link>
-          </li>
-        )}
-        {availableLinks === "WebLink" && (
-          <li className={classes["link"]}>
-            <Link to={socialLinks}>
-              <WebLink />
-            </Link>
-          </li>
-        )}
-        {availableLinks === "AndroidLink" && (
-          <li className={classes["link"]}>
-            <Link to={socialLinks}>
-              <AndroidLink />
-            </Link>
-          </li>
-        )}
-      </>
-    ))
-  }
+
   return (
     <>
       {/* Portfolio Cards */}
       <div className={classes["portfolioCard"]}>
         <div className={classes["content"]}>
           <div className={`${classes["details"]}`}>
-            <div className={classes["categories"]}>
-              {projectCategories.map(({ projectCategory, id }) => (
-                <p key={id}>{projectCategory}</p>
-              ))}
+            <div className={classes["detailsSpacing"]}>
+              <div className={classes["categories"]}>
+                {projectCategories.map(({ projectCategory, id }) => (
+                  <p key={id}>{projectCategory}</p>
+                ))}
+              </div>
+
+              <h4>{projectTitle}</h4>
+
+              <Link className={classes["projectLink"]} to="/">
+                View Project
+              </Link>
             </div>
 
-            <h4>{projectTitle}</h4>
-
-            <Link className={classes["projectLink"]} to="/">
-              View Project
-            </Link>
-
             <ul className={classes["socialLinks"]}>
-              {renderSocial(socialLinks)}
+              {socialLinks.map(
+                ({ availableLinks, socialLinks, id }) =>
+                  availableLinks === "Behance" && (
+                    <li key={id} className={classes["link"]}>
+                      <Link to="/">
+                        <Behance />
+                      </Link>
+                    </li>
+                  ) &&
+                  availableLinks === "Github" && (
+                    <li key={id} className={classes["link"]}>
+                      <Link to="/">
+                        <Github />
+                      </Link>
+                    </li>
+                  ) &&
+                  availableLinks === "WebLink" && (
+                    <li key={id} className={classes["link"]}>
+                      <Link to="/">
+                        <WebLink />
+                      </Link>
+                    </li>
+                  )
+              )}
             </ul>
           </div>
         </div>

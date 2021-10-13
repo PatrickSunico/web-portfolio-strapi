@@ -33,8 +33,12 @@
     --hero-caption: clamp(30px, 3.8vw, 40px);
 
     // Portfolio Card Details
-    --portfolio-card-details-p: clamp(1.2em, 2vw, 20px);
-    --portfolio-card-details-h4: clamp(3em, 5vw, 5em);
+    // --portfolio-card-details-p: clamp(1.2em, 2vw, 20px);
+    // --portfolio-card-details-h4: clamp(3em, 5vw, 3em);
+
+    --portfolio-card-details-p: 14px;
+    --portfolio-card-details-h4: 45px;
+    --portfolio-card-link: 16px;
     --portfolio-card-shadow: 0 10px 30px -15px #bababa;
 
     // Tabs
