@@ -2,8 +2,9 @@ import React from "react"
 
 import { Link } from "gatsby"
 import * as classes from "./PortfolioCard.module.scss"
+import { graphql } from "gatsby"
 
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, StaticImage, Img } from "gatsby-plugin-image"
 import Behance from "../../../assets/icons/BehanceLink.svg"
 import WebLink from "../../../assets/icons/WebLink.svg"
 import Github from "../../../assets/icons/GithubLink.svg"
@@ -21,7 +22,7 @@ const PortfolioCard = props => {
     CardCover,
   } = props.content
 
-  console.log(CardCover)
+  const image = CardCover.url
 
   const { projectCategories, socialLinks } = projectDetails
 
@@ -48,39 +49,34 @@ const PortfolioCard = props => {
             <ul className={classes["socialLinks"]}>
               {socialLinks.map(
                 ({ availableLinks, socialLinks, id }) =>
-                  availableLinks === "Behance" && (
+                  (availableLinks === "Behance" && (
                     <li key={id} className={classes["link"]}>
                       <Link to="/">
                         <Behance />
                       </Link>
                     </li>
-                  ) &&
-                  availableLinks === "Github" && (
+                  )) ||
+                  (availableLinks === "Github" && (
                     <li key={id} className={classes["link"]}>
                       <Link to="/">
                         <Github />
                       </Link>
                     </li>
-                  ) &&
-                  availableLinks === "WebLink" && (
+                  )) ||
+                  (availableLinks === "WebLink" && (
                     <li key={id} className={classes["link"]}>
                       <Link to="/">
                         <WebLink />
                       </Link>
                     </li>
-                  )
+                  ))
               )}
             </ul>
           </div>
         </div>
 
         <div className={classes["imageWrapper"]}>
-          <StaticImage
-            src="../../../images/nedina-mobile.jpg"
-            alt="nedina-design"
-            width={1000}
-            className={classes["image"]}
-          />
+          <img src={image} alt="design-cover" className={classes["image"]} />
         </div>
       </div>
     </>
@@ -88,3 +84,19 @@ const PortfolioCard = props => {
 }
 
 export default PortfolioCard
+
+// export const imageQuery = graphql`
+//   {
+//     test {
+//       localImage {
+//         childImageSharp {
+//           fluid {
+//             ...GatsbyImageSharpFluid
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+// console.log(imageQuery)

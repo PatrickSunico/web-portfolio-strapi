@@ -8,11 +8,11 @@ const PortfolioTab = props => {
   const { contents } = props
 
   return (
-    <div className={classes["portfolioContentWrapper"]}>
+    <>
       {contents.map((content, index) => (
         <PortfolioCard key={index} content={content.node} />
       ))}
-    </div>
+    </>
   )
 }
 

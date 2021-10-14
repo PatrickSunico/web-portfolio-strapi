@@ -54,8 +54,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: "Test", // Created Node type name
-        imagePath: "imgUrl", // The image url name in test node type
+        nodeType: "allStrapiPortfolios.edges.node.CardCover.url", // Created Node type name
+        imagePath: "url", // The image url name in test node type
       },
     },
 

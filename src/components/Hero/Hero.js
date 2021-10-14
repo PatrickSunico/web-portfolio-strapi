@@ -19,7 +19,7 @@ const Hero = () => {
               <h2 className={classes["heroHeading"]}>{headline}</h2>
               <p className={classes["heroCaption"]}>{secondary_headline}</p>
               <div
-                className={`${classes["heroDescription"]} col-md-6 col-xl-8`}
+                className={`${classes["heroDescription"]} col-sm-12 col-md-10 col-xl-8`}
                 dangerouslySetInnerHTML={{ __html: caption }}
               ></div>
               <AnchorButton classNames={`button`}> My Resume</AnchorButton>

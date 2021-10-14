@@ -40,9 +40,9 @@
 
     .heroDescription {
         p {
-            font-size: var(--default-fs);
+            font-size: var(--hero-description);
             font-family: var(--default-font);
-            padding: 40px 0;
+            padding: 30px 0;
             color: white;
             font-weight: var(--fw-light);
         }
@@ -58,7 +58,4 @@
             }
         }
     }
-}
-
-@include respond(laptop) {
 }
