@@ -15,8 +15,6 @@ import Experience from "../components/Experience/Experience"
 import ProjectList from "../components/ProjectsList/ProjectList"
 
 const IndexPage = props => {
-  console.log(props)
-
   return (
     <Layout navigation={props} pageTitle="Home Page">
       <Navbar navigation={props} />

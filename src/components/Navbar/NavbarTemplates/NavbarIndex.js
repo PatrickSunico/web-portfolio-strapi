@@ -5,7 +5,6 @@ import * as classes from "../Navbar.module.scss"
 import NavbarLinks from "../NavbarLinks"
 
 function NavbarIndex({ navbarActive }) {
-  console.log(navbarActive)
   return (
     <nav
       className={

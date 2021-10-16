@@ -12,7 +12,6 @@ import NavbarIndex from "./NavbarTemplates/NavbarIndex"
 import NavbarPortfolio from "./NavbarTemplates/NavbarPortfolio"
 
 const Navbar = data => {
-  console.log(data)
   const currentLocation = data.navigation.path
   const [scrolling, setScrolling] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)

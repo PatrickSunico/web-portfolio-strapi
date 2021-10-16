@@ -4,8 +4,6 @@ import { Link } from "gatsby"
 import * as classes from "../Navbar.module.scss"
 
 function NavbarPortfolio({ navbarActive }) {
-  console.log(navbarActive)
-
   return (
     <nav
       className={
