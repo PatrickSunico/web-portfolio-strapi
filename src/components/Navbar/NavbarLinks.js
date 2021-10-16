@@ -10,15 +10,13 @@ import { useMenuQuery } from "../../hooks/useMenuQuery"
 
 const NavbarLinks = () => {
   const currentMenu = useMenuQuery().location.path
-  return (
-    <>
-      {MenuData.map((link, index) => (
-        <Link key={index} to="/" className={`${classes["link"]}`}>
-          {link.title}
-        </Link>
-      ))}
-    </>
-  )
+  const renderLinks = MenuData.map((link, index) => (
+    <Link key={index} to="/" className={`${classes["link"]}`}>
+      {link.title}
+    </Link>
+  ))
+
+  return <>{currentMenu !== "/" ? "" : renderLinks}</>
 }
 
 export default NavbarLinks

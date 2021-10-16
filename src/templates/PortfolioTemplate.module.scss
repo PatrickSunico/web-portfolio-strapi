@@ -19,7 +19,6 @@ h3.mainHeading {
 }
 
 p.paragraphTags {
-    font-size: 20px;
     font-weight: var(--fw-light);
     font-family: var(--default-font);
     font-size: var(--portfolio-card-details-p);
@@ -38,14 +37,18 @@ p.paragraphTags {
     .categoriesContainer {
         display: flex;
         @extend .paragraphTags;
+        font-weight: var(--fw-regular);
     }
 
     .toolsContainer {
         display: flex;
         align-items: center;
+        margin: 10px 0;
         span {
-            @extend .paragraphTags;
+            font-weight: var(--fw-regular);
+            font-family: var(--default-font);
             margin-right: 5px;
+            color: var(--primary-color);
         }
         p {
             @extend .paragraphTags;

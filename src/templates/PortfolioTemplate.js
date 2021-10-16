@@ -57,7 +57,7 @@ const PortfolioTemplate = data => {
 
   const { projectCategories, projectTools, socialLinks } = projectDetails
 
-  console.log(portfolio)
+  // console.log(portfolio)
   return (
     <Layout>
       <div className="sectionContainer">

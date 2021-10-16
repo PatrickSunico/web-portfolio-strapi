@@ -10,7 +10,11 @@ import * as classes from "./Navbar.module.scss"
 // Components
 import NavbarLinks from "./NavbarLinks"
 
+import { useMenuQuery } from "../../hooks/useMenuQuery"
+
 const Navbar = data => {
+  const currentMenu = useMenuQuery().location.path
+  console.log(currentMenu)
   const [scrolling, setScrolling] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
   const [navbarActive, setNavbarActive] = useState(false)
