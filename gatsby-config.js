@@ -47,7 +47,7 @@ module.exports = {
       options: {
         apiURL: `https://gentle-fortress-28010.herokuapp.com`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`experiences`, `portfolios`],
+        collectionTypes: [`experiences`, `portfolios`, `other-projects`],
         singleTypes: [`hero`, `about`],
       },
     },

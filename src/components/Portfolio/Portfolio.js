@@ -7,10 +7,10 @@ import PortfolioTab from "./PortfolioTab/PortfolioTab"
 
 // Data
 import { menu } from "../../data/portfolioData"
-import { useProjectQuery } from "../../hooks/usePortfolioQuery"
+import { usePortfolioQuery } from "../../hooks/usePortfolioQuery"
 
 const Portfolio = () => {
-  const projectQuery = useProjectQuery()
+  const projectQuery = usePortfolioQuery()
   const projectsData = projectQuery
   const projectsList = projectsData.project_cards.edges
 

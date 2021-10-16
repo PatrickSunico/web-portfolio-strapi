@@ -14,12 +14,13 @@ import "../styles/styles.scss"
 // Components
 import Navbar from "./Navbar/Navbar"
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = props => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          siteUrl
         }
       }
     }
@@ -29,7 +30,7 @@ const Layout = ({ pageTitle, children }) => {
     <>
       <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} />
       {/* Renders Children Components */}
-      <main>{children}</main>
+      <main>{props.children}</main>
     </>
   )
 }

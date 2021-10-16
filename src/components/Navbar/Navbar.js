@@ -10,7 +10,7 @@ import * as classes from "./Navbar.module.scss"
 // Components
 import NavbarLinks from "./NavbarLinks"
 
-const Navbar = ({ siteTitle }) => {
+const Navbar = data => {
   const [scrolling, setScrolling] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
   const [navbarActive, setNavbarActive] = useState(false)

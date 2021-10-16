@@ -5,7 +5,13 @@ import ProjectCard from "./ProjectCard/ProjectCard"
 // Styles
 import * as classes from "./ProjectList.module.scss"
 
+// Data
+import { useOtherProjectQuery } from "../../hooks/useOtherProjectsQuery"
+
 const ProjectList = () => {
+  const otherProjectsQuery = useOtherProjectQuery()
+  const otherProjectsData = otherProjectsQuery.other_projects.nodes
+
   return (
     <div className={`${classes["projectListParent"]} marginTop marginBottom`}>
       <div className="sectionContainer">
@@ -15,12 +21,9 @@ const ProjectList = () => {
           </div>
 
           <div className={classes["projectsGrid"]}>
-            <ProjectCard>Card</ProjectCard>
-            <ProjectCard>Card</ProjectCard>
-            <ProjectCard>Card</ProjectCard>
-            <ProjectCard>Card</ProjectCard>
-            <ProjectCard>Card</ProjectCard>
-            <ProjectCard>Card</ProjectCard>
+            {otherProjectsData.map((content, index) => (
+              <ProjectCard key={content.strapiId} content={content} />
+            ))}
           </div>
         </div>
       </div>

@@ -18,20 +18,14 @@
 
         .year {
             display: flex;
-            flex-direction: row;
-            text-align: right;
+            flex-direction: column;
+            text-align: left;
 
             p {
                 line-height: 1;
                 font-weight: var(--fw-light);
                 font-size: 18px;
-                &:last-child {
-                    &::before {
-                        margin-left: 5px;
-                        margin-right: 5px;
-                        content: "•";
-                    }
-                }
+                margin: 5px 0;
             }
         }
     }
@@ -85,13 +79,9 @@
             .year {
                 flex-direction: column;
                 justify-content: flex-end;
-
                 p {
-                    &:last-child {
-                        &::before {
-                            content: "";
-                        }
-                    }
+                    text-align: right;
+                    margin: 0;
                 }
             }
         }

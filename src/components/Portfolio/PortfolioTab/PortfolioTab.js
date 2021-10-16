@@ -10,7 +10,7 @@ const PortfolioTab = props => {
   return (
     <>
       {contents.map((content, index) => (
-        <PortfolioCard key={index} content={content.node} />
+        <PortfolioCard key={content.node.id} content={content.node} />
       ))}
     </>
   )

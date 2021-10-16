@@ -6,7 +6,10 @@ import * as classes from "./Navbar.module.scss"
 // Data
 import { MenuData } from "../../data/MenuData"
 
+import { useMenuQuery } from "../../hooks/useMenuQuery"
+
 const NavbarLinks = () => {
+  const currentMenu = useMenuQuery().location.path
   return (
     <>
       {MenuData.map((link, index) => (

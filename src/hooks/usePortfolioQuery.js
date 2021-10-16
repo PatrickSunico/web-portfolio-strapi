@@ -1,17 +1,19 @@
 import { useStaticQuery, graphql } from "gatsby"
-export const useProjectQuery = () => {
+export const usePortfolioQuery = () => {
   const data = useStaticQuery(graphql`
-    query ProjectQuery {
+    query PortfolioQuery {
       project_cards: allStrapiPortfolios {
         edges {
           node {
             CardCover {
-              id
-              url
-              provider
-              name
               localFile {
-                url
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 1040
+                    placeholder: NONE
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
               }
             }
             projectDetails {
@@ -38,6 +40,7 @@ export const useProjectQuery = () => {
           }
         }
       }
+
     }
   `)
   return data

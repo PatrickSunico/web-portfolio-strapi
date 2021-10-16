@@ -8,8 +8,13 @@
     margin: 3em 0;
     visibility: visible;
     opacity: 1;
-    transform: var(--breakpoint-transform);
-    transition: var(--breakpoint-transition);
+
+    // transform: var(--breakpoint-transform);
+    // transition: var(--breakpoint-transition);
+
+    // box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: var(--transition);
+    // transition: all 0.25s linear;
 
     // Every 2nd Element
     &:nth-child(2n) {
@@ -38,6 +43,8 @@
 
     .imageWrapper {
         height: 100%;
+        // max-height: 400px;
+
         grid-area: 1/1/1/-1;
         position: relative;
         z-index: 1;
@@ -45,11 +52,8 @@
         img {
             height: 400px;
             object-fit: cover;
+            object-position: 60% 50%;
             width: auto;
-
-            box-shadow: var(--project-card-box-shadow);
-            -webkit-box-shadow: var(--project-card-box-shadow);
-            -moz-box-shadow: var(--project-card-box-shadow);
 
             // filter: var(--filter-saturate);
             // filter: var(--filter-gray);
@@ -99,7 +103,7 @@
         z-index: 2;
 
         background-color: transparent;
-        padding: 25px;
+        padding: 15px 20px;
         .detailsSpacing {
             padding: 20px 0;
         }
@@ -119,12 +123,13 @@
             color: #fff;
 
             &:after {
-                content: ",";
-                margin-right: 5px;
+                content: ", ";
+                margin-right: 2px;
             }
 
-            &:nth-of-type(3n + 1):after {
+            &:last-child:after {
                 content: "";
+                margin-right: 0px;
             }
         }
 
@@ -194,9 +199,137 @@
     }
 }
 
+// tablets Laptop // Card for Every 1st and 3rd Element // ODD
+@include respond(tablets) {
+    // Odd Every 2nth Element
+    .portfolioCard {
+        // margin: 8em 0;
+        // Every 1st and 3rd Odd
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        width: 100%;
+        background-color: transparent;
+
+        // Grid Image and Content
+        .imageWrapper,
+        .details {
+            grid-row: 1/2;
+        }
+
+        .content {
+            grid-area: 1/1/-1/9;
+            padding: 0;
+            // width: 300px;
+        }
+
+        .imageWrapper {
+            grid-area: 1/15/1/3;
+            width: 100%;
+            z-index: 1;
+            img {
+                height: 400px;
+            }
+        }
+
+        .details {
+            position: relative;
+            grid-column: 1/3;
+            margin: 20px 0;
+            background-color: white;
+            // width: 300px;
+
+            box-shadow: var(--portfolio-card-shadow);
+            border-radius: 3px;
+
+            p {
+                color: #000;
+            }
+
+            h4 {
+                color: #000;
+            }
+            .socialLinks {
+                display: flex;
+
+                .link {
+                    grid-column: 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    // social Links hover
+                    a {
+                        transition: var(--transition-all);
+                        &:hover {
+                            transform: var(--translateY);
+                        }
+                        svg {
+                            path,
+                            rect {
+                                fill: var(--social-link-desktop-color);
+                            }
+                        }
+                    }
+                }
+            }
+            .projectLink {
+                outline: none;
+                font-family: var(--default-font);
+                font-weight: var(--fw-bold);
+                font-size: var(--portfolio-card-link);
+                text-transform: uppercase;
+                padding: 0.8em 0;
+                line-height: initial;
+                letter-spacing: 4px;
+                cursor: pointer;
+                text-decoration: none;
+                display: inline-block;
+                color: #000;
+                text-decoration: none;
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 60px;
+                    height: 4px;
+                    background-color: var(--primary-color);
+                    transition: var(--transition-all);
+                    position: relative;
+                    top: 10px;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        // Odd Every 3rd Element
+        &:nth-child(2n) {
+            // Grid Row
+            .imageWrapper,
+            .details {
+                grid-row: 1/2;
+            }
+
+            .imageWrapper {
+                // grid-column: 1 / 8;
+                grid-area: 1/1/1/13;
+                z-index: 1;
+                position: relative;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .details {
+                grid-column: 1/3;
+                width: 300px;
+            }
+        }
+    }
+}
+
 // Desktop Laptop // Card For Every 2nd and 4th Element // EVEN
 // 768px
-@include respond(laptop) {
+@include respond(desktop) {
     // Odd Every 3nth Element
 
     .portfolioCard {
@@ -234,6 +367,9 @@
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
+                img {
+                    height: 400px;
+                }
             }
             .details {
                 grid-column: 1/3;
@@ -244,7 +380,7 @@
 }
 
 // laptop Laptop // Card for Every 1st and 3rd Element // ODD
-@include respond(laptop) {
+@include respond(desktop) {
     // Odd Every 2nth Element
     .portfolioCard {
         // margin: 8em 0;

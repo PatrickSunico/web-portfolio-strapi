@@ -29,11 +29,25 @@
 }
 .projectDetails {
     z-index: 2;
-    p {
-        font-size: 16;
-        font-weight: var(--fw-light);
-        font-family: var(--default-font);
-        color: #000;
+
+    .projectCategories {
+        display: flex;
+
+        p {
+            font-size: 16;
+            font-weight: var(--fw-light);
+            font-family: var(--default-font);
+            color: #000;
+            &:after {
+                content: ",";
+                margin-right: 2px;
+            }
+
+            &:last-child:after {
+                content: "";
+                margin-right: 0px;
+            }
+        }
     }
 
     h5 {
@@ -54,6 +68,7 @@
             a {
                 display: flex;
                 transition: var(--transition-all);
+                cursor: pointer;
                 svg {
                     display: flex;
                     align-items: center;

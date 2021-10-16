@@ -38,7 +38,7 @@
     // --portfolio-card-details-h4: clamp(3em, 5vw, 3em);
 
     --portfolio-card-details-p: 14px;
-    --portfolio-card-details-h4: 45px;
+    --portfolio-card-details-h4: clamp(30px, 2vw, 45px);
     --portfolio-card-link: 16px;
     --portfolio-card-shadow: 0 10px 30px -15px #bababa;
 
