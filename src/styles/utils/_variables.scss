@@ -42,10 +42,14 @@
     --portfolio-card-link: 16px;
     --portfolio-card-shadow: 0 10px 30px -15px #bababa;
 
+    // Portfolio Template
+    --portfolio-template-default-size: 18px;
+
     // Tabs
     --tabs-font-size: 16px;
 
     --container-width: 100%;
+    --portfolio-hero-container: 100%;
     --hero-container: 100%;
     --section-container: 100%;
 
@@ -102,6 +106,7 @@
     :root {
         --container-width: 1900px;
         --hero-container: 1200px;
+        --portfolio-hero-container: 1200px;
         --section-container: 990px;
     }
 }
@@ -110,6 +115,7 @@
     :root {
         --container-width: 1900px;
         --hero-container: 1200px;
+        --portfolio-hero-container: 1200px;
         --section-container: 1080px;
     }
 }
@@ -119,6 +125,7 @@
     :root {
         --container-width: 1900px;
         --hero-container: 1440px;
+        --portfolio-hero-container: 1440px;
         --section-container: 1080px;
     }
 }
@@ -127,42 +134,10 @@
     :root {
         --container-width: 1900px;
         --hero-container: 1440px;
+        --portfolio-hero-container: 1440px;
         --section-container: 1140px;
     }
 }
-
-// Old Breakpoints
-// @include respond(laptop) {
-//     :root {
-//         --section-container: 990px;
-//     }
-// }
-
-// // desktop 1200px
-// @include respond(desktop) {
-//     :root {
-//         --container-width: 1900px;
-//         --hero-container: 1200px;
-//         --section-container: 990px;
-//     }
-// }
-// // xl-desktop 1600px
-// @include respond(xl_desktop) {
-//     :root {
-//         --container-width: 1900px;
-//         --hero-container: 1200px%;
-//         --section-container: 1200px;
-//     }
-// }
-
-// // xxl-desktop 2100px
-// @include respond(xxl_desktop) {
-//     :root {
-//         --container-width: 1900px;
-//         --hero-container: 1440px;
-//         --section-container: 1440px;
-//     }
-// }
 
 // Font Size
 .font-size {

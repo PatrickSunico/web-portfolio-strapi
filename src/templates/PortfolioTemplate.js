@@ -3,6 +3,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import * as classes from "./PortfolioTemplate.module.scss"
 
+// Components
+import Navbar from "../components/Navbar/Navbar"
+import NavbarPortfolio from "../components/Navbar/NavbarTemplates/NavbarPortfolio"
+import PortfolioHeader from "./PortolioHeader/PortfolioHeader"
+import PortfolioSection from "./PortfolioSection/PortfolioSection"
+
 export const query = graphql`
   query PortfolioTemplateQuery($slug: String!) {
     strapiPortfolios(slug: { eq: $slug }) {
@@ -11,17 +17,7 @@ export const query = graphql`
       slug
       strapiId
       updated_at
-      CardCover {
-        localFile {
-          childImageSharp {
-            gatsbyImageData(
-              width: 1040
-              placeholder: NONE
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
+
       projectType
       projectDetails {
         id
@@ -46,51 +42,30 @@ export const query = graphql`
         metaTitle
         viewPort
       }
+      sectionField
     }
   }
 `
 
 const PortfolioTemplate = data => {
   const portfolio = data.data.strapiPortfolios
-  const { CardCover, SEO, id, projectDetails, projectTitle, projectType } =
-    portfolio
+  const { SEO, projectDetails, projectTitle, sectionField } = portfolio
 
   const { projectCategories, projectTools, socialLinks } = projectDetails
 
-  // console.log(portfolio)
   return (
     <Layout>
-      <div className="sectionContainer">
-        <div className="container flex-direction-column">
-          <div className={classes["portfolioTemplate"]}>
-            <div className={classes["detailsContainer"]}>
-              <div className={classes["categoriesContainer"]}>
-                {projectCategories.map(({ projectCategory, id }) => (
-                  <p className={classes["paragraphTags"]} key={id}>
-                    {projectCategory}
-                  </p>
-                ))}
-              </div>
-              <h3 className={classes["mainHeading"]}>{projectTitle}</h3>
-              <div className={classes["toolsContainer"]}>
-                <span>Tools:</span>
+      <Navbar navigation={data} />
 
-                {projectTools.map(({ tool, id }) => (
-                  <p key={id}>{tool}</p>
-                ))}
-              </div>
-            </div>
+      <div className={classes["portfolioTemplate"]}>
+        <PortfolioHeader
+          projectTitle={projectTitle}
+          projectCategories={projectCategories}
+          projectTools={projectTools}
+          socialLinks={socialLinks}
+        />
 
-            <div className={classes["splitSection"]}>
-              <div className={classes["description"]}>
-                <h3 className={classes["mainHeading"]}>About</h3>
-                <p>Lorem</p>
-              </div>
-
-              <div className={classes["sideImage"]}></div>
-            </div>
-          </div>
-        </div>
+        <PortfolioSection sectionField={sectionField} />
       </div>
     </Layout>
   )

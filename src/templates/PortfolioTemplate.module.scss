@@ -17,11 +17,10 @@ h3.mainHeading {
     white-space: nowrap;
     line-height: 1;
 }
-
-p.paragraphTags {
+.paragraphTags {
     font-weight: var(--fw-light);
     font-family: var(--default-font);
-    font-size: var(--portfolio-card-details-p);
+    font-size: var(--portfolio-template-default-size);
     &:after {
         content: ",";
         margin-right: 5px;
@@ -31,32 +30,4 @@ p.paragraphTags {
         content: "";
         margin-right: 0px;
     }
-}
-// Main Header Details
-.detailsContainer {
-    .categoriesContainer {
-        display: flex;
-        @extend .paragraphTags;
-        font-weight: var(--fw-regular);
-    }
-
-    .toolsContainer {
-        display: flex;
-        align-items: center;
-        margin: 10px 0;
-        span {
-            font-weight: var(--fw-regular);
-            font-family: var(--default-font);
-            margin-right: 5px;
-            color: var(--primary-color);
-        }
-        p {
-            @extend .paragraphTags;
-        }
-    }
-}
-
-// About Section Details
-.splitSection {
-    margin: 14em 0;
 }

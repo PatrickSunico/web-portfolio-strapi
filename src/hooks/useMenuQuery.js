@@ -6,11 +6,8 @@ export const useMenuQuery = () => {
       site {
         siteMetadata {
           title
+          siteUrl
         }
-      }
-
-      location: sitePage {
-        path
       }
     }
   `)

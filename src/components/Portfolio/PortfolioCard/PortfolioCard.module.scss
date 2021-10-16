@@ -154,9 +154,6 @@
 
     .socialLinks {
         display: flex;
-        // padding: 10px 0;
-        // flex-wrap: nowrap;
-
         .link {
             display: flex;
             align-items: center;
@@ -284,7 +281,6 @@
                 text-decoration: none;
                 display: inline-block;
                 color: #000;
-                text-decoration: none;
                 &::after {
                     content: "";
                     display: block;
@@ -311,7 +307,6 @@
             }
 
             .imageWrapper {
-                // grid-column: 1 / 8;
                 grid-area: 1/1/1/13;
                 z-index: 1;
                 position: relative;
@@ -341,8 +336,6 @@
                 grid-row: 1/2;
             }
             .socialLinks {
-                // display: grid;
-                // grid-template-columns: 50px 25%;
                 .link {
                     grid-column: 2;
                     display: flex;
@@ -353,14 +346,12 @@
 
             // Content
             .content {
-                // grid-column: 7 / -1;
                 grid-area: -1/-6/-1/14;
                 justify-content: flex-end;
                 width: 300px;
             }
 
             .imageWrapper {
-                // grid-column: 1 / 8;
                 grid-area: 1/2/1/12;
                 z-index: 1;
                 position: relative;

@@ -15,8 +15,6 @@ import "../styles/styles.scss"
 import Navbar from "./Navbar/Navbar"
 
 const Layout = props => {
-  console.log(props)
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,7 +28,6 @@ const Layout = props => {
 
   return (
     <>
-      <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{props.children}</main>
     </>
   )

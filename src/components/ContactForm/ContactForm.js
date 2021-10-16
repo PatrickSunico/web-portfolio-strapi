@@ -93,12 +93,12 @@ const ContactForm = () => {
                     <ul className={classes["contactFormSocialLinks"]}>
                       <li>
                         <Link to="/">
-                          <LinkedIn />
+                          <Github />
                         </Link>
                       </li>
                       <li>
                         <Link to="/">
-                          <Github />
+                          <LinkedIn />
                         </Link>
                       </li>
                       <li>
@@ -110,8 +110,6 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
-
-              {/* End */}
 
               {/* Form */}
             </div>

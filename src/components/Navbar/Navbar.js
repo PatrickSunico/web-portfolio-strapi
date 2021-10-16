@@ -8,13 +8,12 @@ import Logo from "../../assets/icons/Logo.svg"
 import * as classes from "./Navbar.module.scss"
 
 // Components
-import NavbarLinks from "./NavbarLinks"
-
-import { useMenuQuery } from "../../hooks/useMenuQuery"
+import NavbarIndex from "./NavbarTemplates/NavbarIndex"
+import NavbarPortfolio from "./NavbarTemplates/NavbarPortfolio"
 
 const Navbar = data => {
-  const currentMenu = useMenuQuery().location.path
-  console.log(currentMenu)
+  console.log(data)
+  const currentLocation = data.navigation.path
   const [scrolling, setScrolling] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
   const [navbarActive, setNavbarActive] = useState(false)
@@ -34,29 +33,13 @@ const Navbar = data => {
   }, [scrollTop, changeNavbarBackground])
 
   return (
-    <nav
-      className={
-        navbarActive
-          ? `${classes["navbar"]} ${classes["active"]}`
-          : `${classes["navbar"]}`
-      }
-    >
-      <div className={`container ${classes["alignment"]}`}>
-        <div className="row">
-          {/* Logo */}
-          <div className={`${classes["logo"]}`}>
-            <Link className={classes["logoLink"]} to="/">
-              <Logo />
-            </Link>
-          </div>
-
-          {/* Menu */}
-          <div className={`${classes["menu"]}`}>
-            <NavbarLinks />
-          </div>
-        </div>
-      </div>
-    </nav>
+    <>
+      {currentLocation !== "/" ? (
+        <NavbarPortfolio navbarActive={navbarActive} />
+      ) : (
+        <NavbarIndex navbarActive={navbarActive} />
+      )}
+    </>
   )
 }
 

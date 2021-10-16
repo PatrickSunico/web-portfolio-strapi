@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import Navbar from "../components/Navbar/Navbar"
 import Hero from "../components/Hero/Hero"
 import About from "../components/About/About"
 import SocialLinks from "../components/SocialLinks/SocialLinks"
@@ -14,8 +15,11 @@ import Experience from "../components/Experience/Experience"
 import ProjectList from "../components/ProjectsList/ProjectList"
 
 const IndexPage = props => {
+  console.log(props)
+
   return (
-    <Layout pageTitle="Home Page">
+    <Layout navigation={props} pageTitle="Home Page">
+      <Navbar navigation={props} />
       <Seo title="Home" />
       <SocialLinks />
       <Hero />
