@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
+import { Location } from "@reach/router"
+
 import { Link } from "gatsby"
 
 import Logo from "../../assets/icons/Logo.svg"
@@ -33,11 +35,15 @@ const Navbar = data => {
 
   return (
     <>
-      {currentLocation !== "/" ? (
-        <NavbarPortfolio navbarActive={navbarActive} />
-      ) : (
-        <NavbarIndex navbarActive={navbarActive} />
-      )}
+      <Location>
+        {({ location }) => {
+          if (location.pathname === "/") {
+            return <NavbarIndex navbarActive={navbarActive} />
+          } else {
+            return <NavbarPortfolio navbarActive={navbarActive} />
+          }
+        }}
+      </Location>
     </>
   )
 }
