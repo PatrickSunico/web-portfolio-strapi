@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react"
 import Logo from "../../../assets/icons/Logo.svg"
 import { Link } from "gatsby"
 import * as classes from "../Navbar.module.scss"
-// import NavbarLinks from "../NavbarLinks"
 
 import { FaBars } from "react-icons/fa"
 
-import { MenuData } from "../../../data/MenuData"
+// Components
+import NavbarLinks from "../NavbarLinks"
+import AnchorButton from "../../UI/AnchorButton"
 
 const NavbarIndex = ({ navbarActive }) => {
   const [sidebar, setSideBar] = useState(true)
-  const showSideBar = () => setSideBar(!sidebar)
+
+  const toggleHandler = () => {
+    setSideBar(!sidebar)
+  }
 
   const [width, setWidth] = useState("")
 
@@ -46,15 +50,31 @@ const NavbarIndex = ({ navbarActive }) => {
             </Link>
           </div>
 
-          <FaBars className={`${classes["bar"]}`} onClick={showSideBar} />
+          <FaBars className={`${classes["bar"]}`} onClick={toggleHandler} />
 
-          {/* Menu */}
-          <div className={`${classes["menu"]}`}>
-            {MenuData.map((link, index) => (
-              <Link key={index} to="/" className={`${classes["link"]}`}>
-                {link.title}
-              </Link>
-            ))}
+          {/* DesktopMenu */}
+          <div className={`${classes["desktopMenu"]}`}>
+            <ul>
+              <NavbarLinks />
+            </ul>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className={`${classes["mobileMenu"]}`}>
+            {!sidebar && (
+              <div className={classes["blur"]} onClick={toggleHandler} />
+            )}
+
+            <ul
+              className={`${
+                sidebar ? `${classes["slideIn"]}` : `${classes["slideOut"]}`
+              }`}
+            >
+              <NavbarLinks />
+              <li className={classes["resume"]}>
+                <AnchorButton classNames={`button`}> My Resume</AnchorButton>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

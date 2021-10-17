@@ -1,19 +1,21 @@
-// import React from "react"
-// import { Link } from "gatsby"
+import React from "react"
+import { Link } from "gatsby"
 
-// import * as classes from "./Navbar.module.scss"
+import * as classes from "./Navbar.module.scss"
 
-// // Data
-// // import { MenuData } from "../../data/MenuData"
+// Data
+import { MenuData } from "../../data/MenuData"
 
-// const NavbarLinks = () => {
-//   const renderLinks = MenuData.map((link, index) => (
-//     <Link key={index} to="/" className={`${classes["link"]}`}>
-//       {link.title}
-//     </Link>
-//   ))
+const NavbarLinks = () => {
+  const renderLinks = MenuData.map((link, index) => (
+    <li key={index}>
+      <Link to="/" className={`${classes["link"]}`}>
+        {link.title}
+      </Link>
+    </li>
+  ))
 
-//   return <>{renderLinks}</>
-// }
+  return <>{renderLinks}</>
+}
 
-// export default NavbarLinks
+export default NavbarLinks
