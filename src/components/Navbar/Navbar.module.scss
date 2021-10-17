@@ -9,6 +9,27 @@
     margin: 10px 0;
     display: flex;
 
+    .alignment {
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .bar {
+        display: block;
+        color: white;
+    }
+
+    .navbarPosition {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
     &.active {
         background-color: rgba(10, 25, 47, 1);
         // box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
@@ -17,10 +38,6 @@
         backdrop-filter: blur(10px);
         display: flex;
         margin: 0;
-    }
-    .alignment {
-        display: flex;
-        justify-content: space-between;
     }
     .logo {
         align-items: center;
@@ -35,7 +52,7 @@
 
     .menu {
         flex: 1;
-        display: flex;
+        display: none;
         justify-content: flex-end;
         width: 100%;
         align-items: center;
@@ -88,13 +105,41 @@
 }
 
 // Navbar Desktop
-@include respond(desktop) {
+@include respond(tablets) {
     .navbar {
-        .alignment {
+        .bar {
+            display: none;
         }
-
+        .navbarPosition {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            // flex-flow: column wrap;
+            width: 100%;
+        }
+        .alignment {
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+        }
         .menu {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            align-items: center;
+            // align-items: flex-end;
             .link {
+                font-family: var(--default-font), serif;
+                text-decoration: none;
+                text-align: center;
+                padding: 10px;
+                line-height: 1.6;
+                color: #fff;
+                font-size: var(--navbar-fs);
+                margin: 0 20px;
             }
         }
     }
