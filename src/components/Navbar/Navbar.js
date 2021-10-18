@@ -2,14 +2,8 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Location } from "@reach/router"
 
-import { Link } from "gatsby"
-
-import Logo from "../../assets/icons/Logo.svg"
-
-// Styles
-import * as classes from "./Navbar.module.scss"
-
 // Components
+
 import NavbarIndex from "./NavbarTemplates/NavbarIndex"
 import NavbarPortfolio from "./NavbarTemplates/NavbarPortfolio"
 

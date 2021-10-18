@@ -17,9 +17,6 @@
     grid-template-rows: 1fr;
     gap: 0px 0px;
 
-    // gap: 100px;
-    // padding: 30px;
-    // First Grid
     .gridContent {
         grid-area: 1/1;
         transform: var(--breakpoint-transform);

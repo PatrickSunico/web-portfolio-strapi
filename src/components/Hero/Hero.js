@@ -5,6 +5,10 @@ import AnchorButton from "../UI/AnchorButton"
 
 import { useHeroDataQuery } from "../../hooks/useHeroDataQuery"
 
+// Animation
+import Fade from "react-reveal/Fade"
+import Reveal from "react-reveal/Reveal"
+
 const Hero = () => {
   const heroQuery = useHeroDataQuery()
   const heroData = heroQuery.heroDetails.nodes[0].HeroSection
@@ -16,8 +20,13 @@ const Hero = () => {
         <div className="container">
           <div className="row">
             <div className="sectionBlock flex-direction-column">
-              <h2 className={classes["heroHeading"]}>{headline}</h2>
-              <p className={classes["heroCaption"]}>{secondary_headline}</p>
+              <Fade top>
+                <h2 className={classes["heroHeading"]}>{headline}</h2>
+              </Fade>
+              <Fade top>
+                <p className={classes["heroCaption"]}>{secondary_headline}</p>
+              </Fade>
+
               <div
                 className={`${classes["heroDescription"]} col-sm-12 col-md-10 col-xl-8`}
                 dangerouslySetInnerHTML={{ __html: caption }}

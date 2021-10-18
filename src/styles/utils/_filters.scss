@@ -1,3 +1,21 @@
+@use "../../styles/utils/mixins" as *;
+
+body.blur {
+    overflow: hidden;
+    transition: var(--transition-all);
+    #componentWrapper > * {
+        pointer-events: none;
+        user-select: none;
+        outline: none;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        transform: scale(1.04);
+    }
+}
+
 .filter {
     > img {
         filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");

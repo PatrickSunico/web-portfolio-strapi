@@ -3,6 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
+import ComponentWrapper from "../components/UI/ComponentWrapper"
+// import ComponentWrapper from "../components/UI/ComponentWrapper"
 import Seo from "../components/seo"
 
 import Navbar from "../components/Navbar/Navbar"
@@ -19,13 +21,16 @@ const IndexPage = props => {
     <Layout navigation={props} pageTitle="Home Page">
       <Navbar navigation={props} />
       <Seo title="Home" />
-      <SocialLinks />
-      <Hero />
-      <About />
-      <Experience />
-      <Portfolio />
-      <ProjectList />
-      <ContactForm />
+
+      <ComponentWrapper>
+        <SocialLinks />
+        <Hero />
+        <About />
+        <Experience />
+        <Portfolio />
+        <ProjectList />
+        <ContactForm />
+      </ComponentWrapper>
     </Layout>
   )
 }

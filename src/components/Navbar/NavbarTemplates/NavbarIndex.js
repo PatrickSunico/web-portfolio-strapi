@@ -1,8 +1,10 @@
+// React
 import React, { useState, useEffect } from "react"
-import Logo from "../../../assets/icons/Logo.svg"
 import { Link } from "gatsby"
-import * as classes from "../Navbar.module.scss"
 
+// Assets
+import Logo from "../../../assets/icons/Logo.svg"
+import * as classes from "../Navbar.module.scss"
 import { FaBars } from "react-icons/fa"
 
 // Components
@@ -14,6 +16,7 @@ const NavbarIndex = ({ navbarActive }) => {
 
   const toggleHandler = () => {
     setSideBar(!sidebar)
+    document.body.classList.toggle("blur")
   }
 
   const [width, setWidth] = useState("")
@@ -23,14 +26,17 @@ const NavbarIndex = ({ navbarActive }) => {
   }
 
   useEffect(() => {
-    // setWidth(window.innerWidth)
     window.addEventListener("resize", updateWidthAndHeight)
-    if (width < 991 && sidebar) {
-      setSideBar(sidebar)
-    }
 
+    if (width > 320 && sidebar) {
+      setSideBar(sidebar)
+      document.body.classList.remove("blur")
+    }
     // Cleanup
-    return window.addEventListener("resize", updateWidthAndHeight)
+    return () => {
+      window.removeEventListener("resize", updateWidthAndHeight)
+      setSideBar(!sidebar)
+    }
   }, [width, sidebar])
 
   return (

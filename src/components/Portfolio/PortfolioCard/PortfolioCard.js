@@ -11,6 +11,7 @@ import Github from "../../../assets/icons/GithubLink.svg"
 const PortfolioCard = props => {
   const { projectDetails, projectTitle, CardCover, slug } = props.content
 
+  console.log(CardCover)
   const image = getImage(CardCover.localFile)
   const { projectCategories, socialLinks } = projectDetails
 
