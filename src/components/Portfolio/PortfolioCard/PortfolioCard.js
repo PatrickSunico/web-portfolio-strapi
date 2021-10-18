@@ -29,9 +29,9 @@ const PortfolioCard = props => {
               </div>
 
               <h4>{projectTitle}</h4>
-              <Link className={classes["projectLink"]} to={`/${slug}`}>
+              {/* <Link className={classes["projectLink"]} to={`/${slug}`}>
                 View Project
-              </Link>
+              </Link> */}
             </div>
 
             <ul className={classes["socialLinks"]}>
@@ -64,13 +64,13 @@ const PortfolioCard = props => {
         </div>
 
         <div className={classes["imageWrapper"]}>
-          <Link to={`/${slug}`}>
-            <GatsbyImage
-              image={image}
-              alt="design-cover"
-              className={classes["image"]}
-            />
-          </Link>
+          {/* <Link to={`/${slug}`}> */}
+          <GatsbyImage
+            image={image}
+            alt="design-cover"
+            className={classes["image"]}
+          />
+          {/* </Link> */}
         </div>
       </div>
     </>
