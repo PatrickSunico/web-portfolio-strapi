@@ -8,7 +8,23 @@ import LinkedIn from "../../assets/icons/LinkedInLink.svg"
 import Behance from "../../assets/icons/BehanceLink.svg"
 import Github from "../../assets/icons/GithubLink.svg"
 
+import { useForm } from "react-hook-form"
+
 const ContactForm = () => {
+  const {
+    register,
+    formState: { errors },
+    reset,
+    handleSubmit,
+  } = useForm()
+
+  console.log(errors)
+  const onSubmit = async data => {
+    await console.log(data)
+    reset()
+  }
+  // const onSubmit = data => console.log(data)
+
   return (
     <div className={classes["contactParent"]}>
       <div className={classes["contactContainer"]}>
@@ -24,24 +40,41 @@ const ContactForm = () => {
                     soon as I can.
                   </p>
                   {/* <div className={classes["gridForm"]}> */}
-                  <form className={classes["gridForm"]}>
+                  <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className={classes["gridForm"]}
+                  >
                     <div className={classes["input"]}>
                       <input
-                        id="name"
-                        type="text"
+                        aria-invalid={errors.name ? "true" : "false"}
+                        {...register("name", { required: true })}
                         className={classes["inputField"]}
-                        required
                       />
                       <label htmlFor="name" className={classes["inputLabel"]}>
                         Name
                       </label>
+
+                      {/* {errors.name && (
+                        <span role="alert">{errors.name.message}</span>
+                      )}
+                      {errors.name?.type === "required" && "Name is required"} */}
                     </div>
+
                     <div className={classes["input"]}>
                       <input
-                        type="email"
+                        // type="email"
                         id="email"
+                        // name="email"
+                        aria-invalid={errors.email ? "true" : "false"}
+                        {...register("email", {
+                          required: true,
+                          pattern: {
+                            value: /\S+@\S+\.\S+/,
+                            message:
+                              "Entered value does not match email format",
+                          },
+                        })}
                         className={classes["inputField"]}
-                        required
                       />
                       <label
                         htmlFor="email"
@@ -50,6 +83,13 @@ const ContactForm = () => {
                       >
                         Email
                       </label>
+
+                      {errors.name && (
+                        <span role="alert">{errors.name.message}</span>
+                      )}
+                      {errors.email && (
+                        <span role="alert">Email is Required</span>
+                      )}
                     </div>
 
                     {/* Text Area */}
@@ -57,10 +97,12 @@ const ContactForm = () => {
                       <textarea
                         type="text"
                         id="message"
-                        name="message"
                         rows="6"
                         className={classes["inputField"]}
-                        required
+                        {...register("message", {
+                          required: true,
+                        })}
+                        // required
                       />
                       <label
                         htmlFor="message"
@@ -68,6 +110,16 @@ const ContactForm = () => {
                       >
                         Message
                       </label>
+                      {/* 
+                      {errors.name && (
+                        <span role="alert">{errors.name.message}</span>
+                      )}
+
+                      {errors.message?.type === "required" &&
+                        "Message is required"} */}
+                      {/* {errors.email && (
+                        <span role="alert">Email is Required</span>
+                      )} */}
                     </div>
 
                     <Button classNames={`buttonSubmit`} type="submit">

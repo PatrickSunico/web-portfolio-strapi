@@ -17,6 +17,9 @@
     grid-template-rows: 1fr;
     gap: 0px 0px;
 
+    // gap: 100px;
+    // padding: 30px;
+    // First Grid
     .gridContent {
         grid-area: 1/1;
         transform: var(--breakpoint-transform);
@@ -90,14 +93,14 @@
                 padding: 0.25rem 0;
                 resize: none;
 
-                &:focus,
-                &:valid {
+                // input:focus ~ .floating-label
+                &:focus {
                     color: #fff;
                     outline: 0;
                     font-family: var(--default-font);
 
                     border-bottom-color: #6658d3;
-                    & + .inputLabel {
+                    & ~ .inputLabel {
                         color: #6658d3;
                         transform: translateY(-1.5rem);
                     }
