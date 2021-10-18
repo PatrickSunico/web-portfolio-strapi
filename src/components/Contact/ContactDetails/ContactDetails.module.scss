@@ -1,0 +1,93 @@
+@use "../../../styles/utils/mixins" as *;
+
+// Second Grid
+.gridDetails {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: min-content min-content;
+    gap: 0px 0px;
+    grid-area: 1/2;
+    margin: 20px 0px;
+
+    .details {
+        font-family: var(--default-font);
+        margin: 1em 0;
+        display: flex;
+        flex-direction: column;
+        grid-area: 1/3;
+
+        // Number
+        & + .details {
+            grid-area: 2/3;
+        }
+
+        // Links
+        & + .details + .details {
+            grid-area: 3/3;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+
+                li {
+                    transition: var(--transition-all);
+                    padding: 0 12px;
+                    &:hover {
+                        transform: var(--translateY);
+                    }
+                    a {
+                        svg {
+                            display: flex;
+                            align-items: center;
+                            // height: 60px;
+                            // width: 60px;
+                            path,
+                            rect {
+                                stroke-width: 0;
+                                fill: var(--side-social-color);
+                                stroke: var(--side-social-color);
+                            }
+                            &:hover {
+                                path,
+                                rect {
+                                    fill: var(--side-social-color-hover);
+                                    stroke: var(--side-social-color-hover);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        span {
+            font-size: 16px;
+            color: var(--primary-color);
+            font-weight: var(--fw-regular);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #fff;
+            font-weight: var(--fw-medium);
+            font-size: 24px;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        p {
+            color: #fff;
+            font-weight: var(--fw-medium);
+            font-size: 24px;
+            line-height: 1;
+        }
+    }
+}
+
+@include respond(desktop) {
+    .gridDetails {
+        margin: 50px 0px;
+    }
+}

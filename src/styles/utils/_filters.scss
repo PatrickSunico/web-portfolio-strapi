@@ -3,17 +3,6 @@
 body.blur {
     overflow: hidden;
     transition: var(--transition-all);
-    #componentWrapper > * {
-        pointer-events: none;
-        user-select: none;
-        outline: none;
-        filter: blur(5px);
-        -webkit-filter: blur(5px);
-        -moz-filter: blur(5px);
-        -o-filter: blur(5px);
-        -ms-filter: blur(5px);
-        transform: scale(1.04);
-    }
 }
 
 .filter {

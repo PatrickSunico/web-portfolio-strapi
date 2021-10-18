@@ -12,9 +12,9 @@ import Hero from "../components/Hero/Hero"
 import About from "../components/About/About"
 import SocialLinks from "../components/SocialLinks/SocialLinks"
 import Portfolio from "../components/Portfolio/Portfolio"
-import ContactForm from "../components/ContactForm/ContactForm"
 import Experience from "../components/Experience/Experience"
 import ProjectList from "../components/ProjectsList/ProjectList"
+import ContactContainer from "../components/Contact/ContactContainer"
 
 const IndexPage = props => {
   return (
@@ -29,7 +29,7 @@ const IndexPage = props => {
         <Experience />
         <Portfolio />
         <ProjectList />
-        <ContactForm />
+        <ContactContainer />
       </ComponentWrapper>
     </Layout>
   )
