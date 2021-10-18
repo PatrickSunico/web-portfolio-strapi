@@ -62,7 +62,6 @@ const ContactForm = () => {
 
                     <div className={classes["input"]}>
                       <input
-                        // type="email"
                         id="email"
                         // name="email"
                         aria-invalid={errors.email ? "true" : "false"}
@@ -102,7 +101,6 @@ const ContactForm = () => {
                         {...register("message", {
                           required: true,
                         })}
-                        // required
                       />
                       <label
                         htmlFor="message"
@@ -110,16 +108,6 @@ const ContactForm = () => {
                       >
                         Message
                       </label>
-                      {/* 
-                      {errors.name && (
-                        <span role="alert">{errors.name.message}</span>
-                      )}
-
-                      {errors.message?.type === "required" &&
-                        "Message is required"} */}
-                      {/* {errors.email && (
-                        <span role="alert">Email is Required</span>
-                      )} */}
                     </div>
 
                     <Button classNames={`buttonSubmit`} type="submit">
