@@ -2,6 +2,8 @@ import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
+
 import Layout from "../components/layout"
 import ComponentWrapper from "../components/UI/ComponentWrapper"
 // import ComponentWrapper from "../components/UI/ComponentWrapper"
@@ -15,6 +17,10 @@ import Portfolio from "../components/Portfolio/Portfolio"
 import Experience from "../components/Experience/Experience"
 import ProjectList from "../components/ProjectsList/ProjectList"
 import ContactContainer from "../components/Contact/ContactContainer"
+import AnimationLoader from "../components/AnimationLoader/AnimationLoader"
+
+// Loading Animation
+const { loading, setLoading } = useState(true)
 
 const IndexPage = props => {
   return (

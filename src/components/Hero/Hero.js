@@ -20,13 +20,8 @@ const Hero = () => {
         <div className="container">
           <div className="row">
             <div className="sectionBlock flex-direction-column">
-              <Fade top>
-                <h2 className={classes["heroHeading"]}>{headline}</h2>
-              </Fade>
-              <Fade top>
-                <p className={classes["heroCaption"]}>{secondary_headline}</p>
-              </Fade>
-
+              <h2 className={classes["heroHeading"]}>{headline}</h2>
+              <p className={classes["heroCaption"]}>{secondary_headline}</p>
               <div
                 className={`${classes["heroDescription"]} col-sm-12 col-md-10 col-xl-8`}
                 dangerouslySetInnerHTML={{ __html: caption }}
