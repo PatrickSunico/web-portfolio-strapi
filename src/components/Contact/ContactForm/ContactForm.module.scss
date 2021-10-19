@@ -33,6 +33,14 @@
     }
 }
 
+// Error Handling Specific
+p.errorMessage {
+    padding: 10px 0;
+    font-size: var(--error-message);
+    color: var(--error-color);
+    font-weight: var(--fw-regular);
+}
+
 // Form Specific
 .gridForm {
     margin: 2em 0;
@@ -49,7 +57,7 @@
 
     .input {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         position: relative;
         padding-top: 1.5rem;
         color: #fff;
@@ -88,6 +96,13 @@
                 transform: translateY(-1.5rem);
             }
         }
+    }
+
+    .errorField {
+        // border-bottom: 2px solid var(--error-color);
+    }
+    .errorLabel {
+        color: var(--error-color);
     }
 }
 
