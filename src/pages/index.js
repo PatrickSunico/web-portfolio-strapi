@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -19,25 +19,42 @@ import ProjectList from "../components/ProjectsList/ProjectList"
 import ContactContainer from "../components/Contact/ContactContainer"
 import AnimationLoader from "../components/AnimationLoader/AnimationLoader"
 
-// Loading Animation
-const { loading, setLoading } = useState(true)
-
 const IndexPage = props => {
+  const [loading, setLoading] = useState(true)
+  // Loading Animation
+  useEffect(() => {
+    loading
+      ? document.querySelector("body").classList.add("loading")
+      : document.querySelector("body").classList.remove("loading")
+  }, [loading])
   return (
-    <Layout navigation={props} pageTitle="Home Page">
-      <Navbar navigation={props} />
-      <Seo title="Home" />
+    // <AnimateSharedLayout type="crossfade">
+    //   <AnimatePresence>
 
-      <ComponentWrapper>
-        <SocialLinks />
-        <Hero />
-        <About />
-        <Experience />
-        <Portfolio />
-        <ProjectList />
-        <ContactContainer />
-      </ComponentWrapper>
-    </Layout>
+    //   </AnimatePresence>
+    // </AnimateSharedLayout>
+    <>
+      {loading ? (
+        <motion.div key="loader">
+          <AnimationLoader setLoading={setLoading} />
+        </motion.div>
+      ) : (
+        <Layout navigation={props} pageTitle="Home Page">
+          <Navbar navigation={props} />
+          <Seo title="Home" />
+
+          <ComponentWrapper>
+            <SocialLinks />
+            <Hero />
+            <About />
+            <Experience />
+            <Portfolio />
+            <ProjectList />
+            <ContactContainer />
+          </ComponentWrapper>
+        </Layout>
+      )}
+    </>
   )
 }
 
