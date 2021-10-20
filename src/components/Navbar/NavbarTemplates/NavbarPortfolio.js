@@ -16,7 +16,7 @@ function NavbarPortfolio({ navbarActive }) {
         <div className="row">
           {/* Logo */}
           <div className={`${classes["logo"]}`}>
-            <Link className={classes["logoLink"]} to="/">
+            <Link to="/">
               <Logo />
             </Link>
           </div>

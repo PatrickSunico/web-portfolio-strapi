@@ -26,21 +26,21 @@ const ProjectCard = props => {
             ({ availableLinks, socialLink, id }) =>
               (availableLinks === "Behance" && (
                 <li key={id}>
-                  <a href={socialLink} target="_blank">
+                  <a href={socialLink} target="_blank" rel="noopener">
                     <BehanceLink />
                   </a>
                 </li>
               )) ||
               (availableLinks === "Github" && (
                 <li key={id}>
-                  <a href={socialLink} target="_blank">
+                  <a href={socialLink} target="_blank" rel="noopener">
                     <GithubLink />
                   </a>
                 </li>
               )) ||
               (availableLinks === "Web" && (
                 <li key={id}>
-                  <a href={socialLink} target="_blank">
+                  <a href={socialLink} target="_blank" rel="noopener">
                     <WebLink />
                   </a>
                 </li>

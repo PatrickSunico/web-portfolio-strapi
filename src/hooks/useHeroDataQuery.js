@@ -18,6 +18,14 @@ export const useHeroDataQuery = () => {
             headline
             id
             secondary_headline
+            resume {
+              url
+              mime
+              localFile {
+                publicURL
+                url
+              }
+            }
           }
         }
       }

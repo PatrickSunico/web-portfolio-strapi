@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 // import * as classes from "./Animation.module.scss"
 import "./Animation.scss"
 
-const AnimationLoader = ({ setLoading }) => {
+const AnimationLoader = ({ setLoading, variants }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
@@ -14,6 +14,7 @@ const AnimationLoader = ({ setLoading }) => {
     <motion.div
       className="fullPageLoader"
       onAnimationComplete={() => setLoading(false)}
+      variant={variants}
     >
       <motion.svg
         width="712"

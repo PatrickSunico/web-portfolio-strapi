@@ -43,6 +43,7 @@ const PortfolioHeader = ({
                       className={fontStyle["paragraphTags"]}
                       href={socialLink}
                       target="_blank"
+                      rel="noopener"
                     >
                       Behance
                     </a>
@@ -54,6 +55,7 @@ const PortfolioHeader = ({
                       className={fontStyle["paragraphTags"]}
                       href={socialLink}
                       target="_blank"
+                      rel="noopener"
                     >
                       Github
                     </a>
@@ -65,6 +67,7 @@ const PortfolioHeader = ({
                       className={fontStyle["paragraphTags"]}
                       href={socialLink}
                       target="_blank"
+                      rel="noopener"
                     >
                       Website
                     </a>

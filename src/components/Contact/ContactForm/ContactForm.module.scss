@@ -9,7 +9,6 @@
         font-weight: var(--fw-bold);
         font-family: var(--default-font);
         font-size: clamp(30px, 4.5vw, 4em);
-        // text-transform: uppercase;
         display: flex;
         align-items: center;
         margin: 0;
@@ -21,9 +20,7 @@
     p {
         font-weight: var(--fw-light);
         font-family: var(--default-font);
-
         font-size: clamp(18px, 1vw, 0.2em);
-        // text-transform: uppercase;
         display: flex;
         align-items: center;
         margin: 0;
@@ -44,9 +41,7 @@ p.errorMessage {
 // Form Specific
 .gridForm {
     margin: 2em 0;
-
     padding: 0;
-
     input {
         appearance: none;
         border-radius: 0;

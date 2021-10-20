@@ -44,7 +44,7 @@ const ContactForm = () => {
   return (
     <div className={classes["gridContent"]}>
       <h1>Get In Touch</h1>
-      <p className={classes["gridMessage"]}>
+      <p>
         Feel free to send me a message and I’ll get back to you as soon as I
         can.
       </p>

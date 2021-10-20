@@ -27,16 +27,46 @@ const IndexPage = props => {
       ? document.querySelector("body").classList.add("loading")
       : document.querySelector("body").classList.remove("loading")
   }, [loading])
+
+  const fadeInOut = {
+    animate: {
+      opacity: 0,
+    },
+    initial: {
+      opacity: 0,
+    },
+    exit: {
+      opacity: 1,
+    },
+  }
   return (
     // <AnimateSharedLayout type="crossfade">
     //   <AnimatePresence>
 
     //   </AnimatePresence>
     // </AnimateSharedLayout>
+
+    // <motion.div key="loader">
+    //   <Layout navigation={props} pageTitle="Home Page">
+    //     <Navbar navigation={props} />
+    //     <Seo title="Home" />
+
+    //     <ComponentWrapper>
+    //       <SocialLinks />
+    //       <Hero />
+    //       <About />
+    //       <Experience />
+    //       <Portfolio />
+    //       <ProjectList />
+    //       <ContactContainer />
+    //     </ComponentWrapper>
+    //   </Layout>
+    // </motion.div>
+
     <>
       {loading ? (
         <motion.div key="loader">
-          <AnimationLoader setLoading={setLoading} />
+          <AnimationLoader setLoading={setLoading} variants={fadeInOut} />
         </motion.div>
       ) : (
         <Layout navigation={props} pageTitle="Home Page">

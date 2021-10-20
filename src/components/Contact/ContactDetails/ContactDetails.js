@@ -20,7 +20,7 @@ const ContactDetails = () => {
       </div>
 
       <div className={classes["details"]}>
-        <ul className={classes["contactFormSocialLinks"]}>
+        <ul>
           <li>
             <Link to="/">
               <Github />

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
+import { motion } from "framer-motion"
 // Assets
 import Logo from "../../../assets/icons/Logo.svg"
 import * as classes from "../Navbar.module.scss"
@@ -9,7 +10,41 @@ import { FaBars } from "react-icons/fa"
 
 // Components
 import NavbarLinks from "../NavbarLinks"
-import AnchorButton from "../../UI/AnchorButton"
+
+// Animation
+const staggerContainer = {
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const logoFadeInDown = {
+  hidden: {
+    opacity: 0,
+    y: -20,
+    ease: [0.6, -0.05, 0.01, 0.99],
+    duration: 0.6,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    ease: [0.6, -0.05, 0.01, 0.99],
+    delay: 0.2,
+    transition: {
+      duration: 0.6,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 0,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.6,
+    },
+  },
+}
 
 const NavbarIndex = ({ navbarActive }) => {
   const [sidebar, setSideBar] = useState(true)
@@ -48,21 +83,37 @@ const NavbarIndex = ({ navbarActive }) => {
       }
     >
       <div className={`container ${classes["alignment"]}`}>
-        <div className={classes["navbarPosition"]}>
+        <motion.div
+          className={classes["navbarPosition"]}
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           {/* Logo */}
-          <div className={`${classes["logo"]}`}>
-            <Link className={classes["logoLink"]} to="/">
+          <motion.div
+            className={`${classes["logo"]}`}
+            variants={logoFadeInDown}
+          >
+            <Link to="/">
               <Logo />
             </Link>
-          </div>
+          </motion.div>
 
-          <FaBars className={`${classes["bar"]}`} onClick={toggleHandler} />
+          <motion.div variants={logoFadeInDown}>
+            <FaBars className={`${classes["bar"]}`} onClick={toggleHandler} />
+          </motion.div>
 
           {/* DesktopMenu */}
           <div className={`${classes["desktopMenu"]}`}>
-            <ul>
+            <motion.ul
+              variants={staggerContainer}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+            >
               <NavbarLinks />
-            </ul>
+            </motion.ul>
           </div>
 
           {/* Mobile Menu */}
@@ -77,12 +128,9 @@ const NavbarIndex = ({ navbarActive }) => {
               }`}
             >
               <NavbarLinks />
-              <li className={classes["resume"]}>
-                <AnchorButton classNames={`button`}> My Resume</AnchorButton>
-              </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </nav>
   )

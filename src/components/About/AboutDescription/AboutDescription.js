@@ -34,11 +34,7 @@ const Description = () => {
         <div
           className={`${classes["portraitWrapper"]} col col-sm-8 col-md-4 col-lg-3 col-xl-3`}
         >
-          <GatsbyImage
-            image={portrait}
-            alt="Patrick Portrait"
-            className={classes["image"]}
-          />
+          <GatsbyImage image={portrait} alt="Patrick Portrait" />
         </div>
         <div
           className={`${classes["descriptionWrapper"]} col col-sm-12 col-md-8 col-lg-9 col-xl-9`}
