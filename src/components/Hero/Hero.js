@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 const staggerContainer = {
   show: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 }
@@ -21,28 +21,19 @@ const itemToShow = {
   hidden: {
     opacity: 0,
     y: 20,
-    transition: { duration: 0.6, ease: easing },
-
-    // transition {
-
-    //   ease: [0.6, -0.05, 0.01, 0.99],
-    //   duration: 0.6,
-    // }
+    transition: { duration: 1, ease: easing },
   },
   show: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: easing },
-
-    // ease: [0.6, -0.05, 0.01, 0.99],
-    // duration: 0.6,
   },
   exit: {
     opacity: 0,
     y: 0,
     transition: {
       ease: "easeInOut",
-      duration: 0.6,
+      duration: 1,
     },
   },
 }
@@ -83,14 +74,14 @@ const Hero = () => {
                 dangerouslySetInnerHTML={{ __html: caption }}
               ></motion.div>
 
-              <AnchorButton
+              <motion.a
+                target="_blank"
+                rel="noopener"
                 variants={itemToShow}
-                classNames={`button`}
-                local={resume.localFile}
-                url={resume.url}
+                className={linkStyles["button"]}
               >
                 My Resume
-              </AnchorButton>
+              </motion.a>
             </motion.div>
           </div>
         </div>

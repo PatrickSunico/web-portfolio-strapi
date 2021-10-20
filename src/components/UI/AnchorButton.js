@@ -13,8 +13,12 @@ const AnchorButton = props => {
       target="_blank"
       rel="noopener"
       href={`${localFile}`}
+      whileHover={{
+        opacity: 1,
+        scale: 4,
+        transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+      }}
       className={classes[props.classNames]}
-      variants={props.variants}
     >
       {props.children}
     </motion.a>

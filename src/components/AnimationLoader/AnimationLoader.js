@@ -3,32 +3,115 @@ import { motion } from "framer-motion"
 // import * as classes from "./Animation.module.scss"
 import "./Animation.scss"
 
-const AnimationLoader = ({ setLoading, variants }) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-    return () => clearTimeout(timer)
-  })
+const AnimationLoader = ({ setLoading }) => {
+  const itemMain = {
+    hidden: { opacity: 0, y: 200 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { ease: [0.6, -0.05, 0.01, 0.99], duration: 1.6 },
+    },
+  }
+  const svgStagger = {
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const pathVariant = {
+    hidden: {
+      opacity: 0,
+      pathLength: 0,
+    },
+    show: {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        duration: 1.4,
+        ease: "easeInOut",
+      },
+    },
+  }
+
   return (
-    <motion.div
-      className="fullPageLoader"
-      onAnimationComplete={() => setLoading(false)}
-      variant={variants}
-    >
+    <motion.div className="fullPageLoader">
       <motion.svg
+        id="logo"
+        width="750"
+        height="123"
+        viewBox="0 0 750 123"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        variants={svgStagger}
+      >
+        <motion.path
+          d="M0.519531 121V1.9998H28.3995V95.8398H83.8195V121H0.519531Z"
+          stroke="white"
+          stroke-width="1"
+          variants={pathVariant}
+          // transition={{
+          //   default: { fill: "white", duration: 2, ease: "easeInOut" },
+          //   fill: { fill: "white", duration: 2, ease: [1, 0, 0.8, 1] },
+          // }}
+        />
+        <motion.path
+          d="M149.936 122.7C132.143 122.7 117.41 117.033 105.736 105.7C94.1763 94.3665 88.3963 79.6331 88.3963 61.4998C88.3963 43.3665 94.1763 28.6331 105.736 17.2998C117.296 5.96647 132.03 0.299805 149.936 0.299805C167.843 0.299805 182.576 5.96647 194.136 17.2998C205.81 28.6331 211.646 43.3665 211.646 61.4998C211.646 79.6331 205.81 94.3665 194.136 105.7C182.576 117.033 167.843 122.7 149.936 122.7ZM126.476 86.4898C132.483 92.7231 140.303 95.8398 149.936 95.8398C159.57 95.8398 167.39 92.7231 173.396 86.4898C179.403 80.1431 182.406 71.8131 182.406 61.4998C182.406 51.2998 179.346 43.0265 173.226 36.6798C167.22 30.3331 159.456 27.1598 149.936 27.1598C140.303 27.1598 132.483 30.3331 126.476 36.6798C120.47 43.0265 117.466 51.2998 117.466 61.4998C117.466 71.8131 120.47 80.1431 126.476 86.4898Z"
+          stroke="white"
+          stroke-width="1"
+          variants={pathVariant}
+        />
+        <motion.path
+          variants={pathVariant}
+          d="M292.333 1.9998L339.253 121H309.673L300.323 95.8398H252.893L243.542 121H213.962L260.883 1.9998H292.333ZM262.073 70.6798H290.973L276.523 32.4298L262.073 70.6798Z"
+          stroke="white"
+          stroke-width="1"
+        />
+        <motion.path
+          variants={pathVariant}
+          d="M348.986 121V1.9998H391.996C411.15 1.9998 426.053 7.21314 436.706 17.6398C447.36 27.9531 452.686 42.4598 452.686 61.1598C452.686 79.8598 447.303 94.5365 436.536 105.19C425.883 115.73 411.036 121 391.996 121H348.986ZM376.866 95.3298H391.826C401.8 95.3298 409.62 92.2698 415.286 86.1498C420.953 80.0298 423.786 71.6998 423.786 61.1598C423.786 50.5065 420.953 42.2898 415.286 36.5098C409.733 30.6165 401.913 27.6698 391.826 27.6698H376.866V95.3298Z"
+          stroke="white"
+          stroke-width="1"
+        />
+        <motion.path
+          variants={pathVariant}
+          d="M467.023 121V1.9998H494.903V121H467.023Z"
+          stroke="white"
+          stroke-width="1"
+        />
+        <motion.path
+          variants={pathVariant}
+          d="M590.506 1.9998H618.556V121H593.226L541.886 50.7898V121H514.006V1.9998H539.166L590.506 72.0398V1.9998Z"
+          stroke="white"
+          stroke-width="1"
+        />
+        <motion.path
+          variants={pathVariant}
+          d="M679.345 55.2098H749.215V121H724.225V111.82C715.952 119.073 705.299 122.7 692.265 122.7C675.152 122.7 660.929 117.033 649.595 105.7C638.262 94.2531 632.595 79.5198 632.595 61.4998C632.595 43.3665 638.319 28.6331 649.765 17.2998C661.212 5.96647 675.605 0.299805 692.945 0.299805C706.319 0.299805 718.105 3.58647 728.305 10.1598C738.619 16.6198 745.305 25.9698 748.365 38.2098L721.165 46.0298C719.692 40.3631 716.405 35.8298 711.305 32.4298C706.319 28.9165 700.199 27.1598 692.945 27.1598C683.765 27.1598 676.229 30.3331 670.335 36.6798C664.555 43.0265 661.665 51.2998 661.665 61.4998C661.665 71.8131 664.612 80.1431 670.505 86.4898C676.512 92.7231 684.389 95.8398 694.135 95.8398C701.275 95.8398 707.622 94.2531 713.175 91.0798C718.729 87.9065 722.412 83.9398 724.225 79.1798H679.345V55.2098Z"
+          stroke="white"
+          stroke-width="1"
+        />
+      </motion.svg>
+      {/* <motion.svg
         width="712"
         height="123"
         viewBox="0 0 712 123"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         id="logo"
+        onAnimationComplete={() => setLoading(false)}
+        initial="hidden"
         animate={{
-          scale: 0.5,
+          scale: 1.2,
           transition: {
             duration: 1,
           },
         }}
+        exit="exit"
       >
         <path
           d="M3.46094 117.5V5.4999H29.7009V93.8199H81.8609V117.5H3.46094Z"
@@ -65,7 +148,7 @@ const AnimationLoader = ({ setLoading, variants }) => {
           stroke="white"
           strokeWidth="5"
         />
-      </motion.svg>
+      </motion.svg> */}
     </motion.div>
   )
 }
