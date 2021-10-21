@@ -6,20 +6,17 @@ const easing = [0.6, -0.05, 0.01, 0.99]
 
 const showLoader = {
   hidden: {
-    opacity: 0,
+    opacity: 1,
     y: 0,
     ease: [0.6, -0.05, 0.01, 0.99],
-    transition: {
-      duration: 0.06,
-    },
   },
   show: {
     opacity: 1,
     y: 0,
     ease: [0.6, -0.05, 0.01, 0.99],
-    delay: 0.2,
     transition: {
-      duration: 0.6,
+      delay: 1.8,
+      duration: 0.02,
     },
   },
   exit: {
@@ -27,7 +24,7 @@ const showLoader = {
     y: 0,
     transition: {
       ease: "easeInOut",
-      duration: 0.6,
+      duration: 0.02,
     },
   },
 }
@@ -42,7 +39,7 @@ const AnimationLoader = ({ setLoading }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         id="logo"
-        // onAnimationComplete={() => setLoading(false)}
+        onAnimationComplete={() => setLoading(false)}
         initial="hidden"
         animate="show"
         exit="exit"
