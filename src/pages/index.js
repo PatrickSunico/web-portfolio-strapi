@@ -22,38 +22,57 @@ import AnimationLoader from "../components/AnimationLoader/AnimationLoader"
 const IndexPage = props => {
   const [loading, setLoading] = useState(true)
   // Loading Animation
-  useEffect(() => {
-    loading
-      ? document.querySelector("body").classList.add("loading")
-      : document.querySelector("body").classList.remove("loading")
-  }, [loading])
 
   return (
-    <AnimateSharedLayout type="crossfade">
-      <AnimatePresence>
-        {loading ? (
-          <motion.div key="loader">
-            <AnimationLoader setLoading={setLoading} />
-          </motion.div>
-        ) : (
-          <Layout navigation={props} pageTitle="Home Page">
-            <Navbar navigation={props} />
-            <Seo title="Home" />
+    <Layout navigation={props} pageTitle="Home Page">
+      <Navbar navigation={props} />
+      <Seo title="Home" />
 
-            <ComponentWrapper>
-              <SocialLinks />
-              <Hero />
-              <About />
-              <Experience />
-              <Portfolio />
-              <ProjectList />
-              <ContactContainer />
-            </ComponentWrapper>
-          </Layout>
-        )}
-      </AnimatePresence>
-    </AnimateSharedLayout>
+      <ComponentWrapper>
+        <SocialLinks />
+        <Hero />
+        <About />
+        <Experience />
+        <Portfolio />
+        <ProjectList />
+        <ContactContainer />
+      </ComponentWrapper>
+    </Layout>
   )
+
+  // Working Code
+  // useEffect(() => {
+  //   loading
+  //     ? document.querySelector("body").classList.add("loading")
+  //     : document.querySelector("body").classList.remove("loading")
+  // }, [loading])
+
+  // return (
+  // <AnimateSharedLayout type="crossfade">
+  //   <AnimatePresence>
+  //     {loading ? (
+  //       <motion.div key="loader">
+  //         <AnimationLoader setLoading={setLoading} />
+  //       </motion.div>
+  //     ) : (
+  //       <Layout navigation={props} pageTitle="Home Page">
+  //         <Navbar navigation={props} />
+  //         <Seo title="Home" />
+
+  //         <ComponentWrapper>
+  //           <SocialLinks />
+  //           <Hero />
+  //           <About />
+  //           <Experience />
+  //           <Portfolio />
+  //           <ProjectList />
+  //           <ContactContainer />
+  //         </ComponentWrapper>
+  //       </Layout>
+  //     )}
+  //   </AnimatePresence>
+  // </AnimateSharedLayout>
+  // )
 }
 
 export default IndexPage

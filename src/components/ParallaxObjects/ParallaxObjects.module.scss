@@ -1,0 +1,79 @@
+// Parent Div
+.frameGroup {
+    position: relative;
+    background-color: var(--hero-background-color);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    svg {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+        object-fit: contain;
+    }
+
+    .layer1 {
+        position: absolute;
+        top: 160px;
+        max-height: 100%;
+        max-width: 100%;
+        right: 700px;
+    }
+    .layer2 {
+        top: 2;
+        right: 2;
+    }
+    .layer3 {
+        top: 2;
+        right: 2;
+    }
+    .layer4 {
+        top: 2;
+        right: 2;
+    }
+    .layer5 {
+        top: 2;
+        right: 2;
+    }
+    .layer6 {
+        top: 2;
+        right: 2;
+    }
+    .layer7 {
+        top: 2;
+        right: 2;
+    }
+    .layer8 {
+        top: 2;
+        right: 2;
+    }
+    .layer9 {
+        top: 2;
+        right: 2;
+    }
+
+    // If you want to make the text also hoverable add the tags and elements
+    /* 
+        ."div" {
+            position: relative;
+
+        }
+        
+    */
+}
+
+// .frameBG {
+//     background-color: var(--hero-background-color);
+//     display: flex;
+//     height: 100%;
+//     width: 100%;
+// }

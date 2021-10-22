@@ -5,9 +5,9 @@
     height: 100vh;
     display: flex;
     margin: 0 auto;
-
-    .heroTest {
-        margin: 0 auto;
+    .heroAbsolute {
+        position: absolute;
+        z-index: 20;
     }
 
     .heroDetailsWrapper {
