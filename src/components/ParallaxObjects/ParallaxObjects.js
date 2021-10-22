@@ -2,33 +2,88 @@ import React from "react"
 
 import { motion, useAnimation } from "framer-motion"
 import * as classes from "./ParallaxObjects.module.scss"
-import Layer1 from "../../assets/svg-layers/layer-1.svg"
-import Layer2 from "../../assets/svg-layers/layer-2.svg"
-import Layer3 from "../../assets/svg-layers/layer-3.svg"
-import Layer4 from "../../assets/svg-layers/layer-4.svg"
-import Layer5 from "../../assets/svg-layers/layer-5.svg"
-import Layer6 from "../../assets/svg-layers/layer-6.svg"
-import Layer7 from "../../assets/svg-layers/layer-7.svg"
-import Layer8 from "../../assets/svg-layers/layer-8.svg"
-import Layer9 from "../../assets/svg-layers/layer-9.svg"
+// BG Layers
+import Borealis from "../../assets/svg-layers/borealis.svg"
+import StarPattern from "../../assets/svg-layers/star-pattern.svg"
+
+// Planets
+import MoonLayer from "../../assets/svg-layers/moon.svg"
+
+import PlanetLayer1 from "../../assets/svg-layers/planet-1.svg"
+import PlanetLayer2 from "../../assets/svg-layers/planet-2.svg"
+import PlanetLayer3 from "../../assets/svg-layers/planet-3.svg"
+import PlanetLayer4 from "../../assets/svg-layers/planet-4.svg"
+import PlanetLayer5 from "../../assets/svg-layers/planet-5.svg"
 
 // Make a loop that loops through all of the svgs to make it's own motion.div
 
-const Frame1 = props => {
+const Moon = props => {
+  return (
+    <motion.div animate={props.animate} className={`${classes["moon"]}`}>
+      <MoonLayer />
+    </motion.div>
+  )
+}
+
+const Planet1 = props => {
   return (
     <motion.div
       animate={props.animate}
-      size={110 / 1.5}
-      className={`${classes["layer"]} ${classes["layer1"]} `}
+      className={`${classes["planetLayer1"]} `}
     >
-      <Layer1 data-speed="-5" />
+      <PlanetLayer1 />
+    </motion.div>
+  )
+}
+const Planet2 = props => {
+  return (
+    <motion.div
+      animate={props.animate}
+      className={`${classes["planetLayer2"]} `}
+    >
+      <PlanetLayer2 />
+    </motion.div>
+  )
+}
+const Planet3 = props => {
+  return (
+    <motion.div
+      animate={props.animate}
+      className={`${classes["planetLayer3"]} `}
+    >
+      <PlanetLayer3 />
+    </motion.div>
+  )
+}
+const Planet4 = props => {
+  return (
+    <motion.div
+      animate={props.animate}
+      className={`${classes["planetLayer4"]} `}
+    >
+      <PlanetLayer4 />
+    </motion.div>
+  )
+}
+const Planet5 = props => {
+  return (
+    <motion.div
+      animate={props.animate}
+      className={`${classes["planetLayer5"]} `}
+    >
+      <PlanetLayer5 />
     </motion.div>
   )
 }
 
 // Main Parent
 const ParallaxObjects = props => {
-  const bgAnimate = useAnimation()
+  const planet1 = useAnimation()
+  const planet2 = useAnimation()
+  const planet3 = useAnimation()
+  const planet4 = useAnimation()
+  const planet5 = useAnimation()
+  const moon = useAnimation()
 
   return (
     <motion.div
@@ -36,64 +91,29 @@ const ParallaxObjects = props => {
       onMouseMove={event => {
         let offsetX = event.clientX - window.innerWidth / 2
         let offsetY = event.clientY - window.innerWidth / 2
-        bgAnimate.start({ x: offsetX / 8, y: offsetY / 8 })
 
-        // console.log(offsetX, offsetY)
+        moon.start({ x: offsetX / 20, y: offsetY / -20 })
+
+        planet1.start({ x: offsetX / -24, y: offsetY / 24 })
+        planet2.start({ x: offsetX / -18, y: offsetY / -18 })
+        planet3.start({ x: offsetX / 22, y: offsetY / -22 })
+        planet4.start({ x: offsetX / -40, y: offsetY / -40 })
+        planet5.start({ x: offsetX / 10, y: offsetY / 10 })
       }}
     >
-      <Frame1 animate={bgAnimate} />
-      {/* <Layer2
-        className={`${classes["layer"]} ${classes["layer2"]} `}
-        data-speed="5"
-      />
-      <Layer3
-        className={`${classes["layer"]} ${classes["layer3"]} `}
-        data-speed="2"
-      />
-      <Layer4
-        className={`${classes["layer"]} ${classes["layer4"]} `}
-        data-speed="6"
-      />
-      <Layer5
-        className={`${classes["layer"]} ${classes["layer5"]} `}
-        data-speed="8"
-      />
-      <Layer6
-        className={`${classes["layer"]} ${classes["layer6"]} `}
-        data-speed="-2"
-      />
-      <Layer7
-        className={`${classes["layer"]} ${classes["layer6"]} `}
-        data-speed="4"
-      />
-      <Layer8
-        className={`${classes["layer"]} ${classes["layer7"]} `}
-        data-speed="9"
-      />
-      <Layer9
-        className={`${classes["layer"]} ${classes["layer8"]} `}
-        data-speed="6"
-      /> */}
+      <Borealis className={classes["borealis"]} />
+      <StarPattern className={classes["starPattern"]} />
+      <Moon animate={moon} />
+
+      <Planet1 animate={planet1} />
+      <Planet2 animate={planet2} />
+      <Planet3 animate={planet3} />
+      <Planet4 animate={planet4} />
+      <Planet5 animate={planet5} />
 
       {props.children}
     </motion.div>
   )
 }
-
-// // import { Frame, useAnimation } from "framer"
-
-// // Children
-// const FrameBG = props => {
-//   return <Frame className={classes["frameBG"]}></Frame>
-// }
-
-// // Main Parent
-// const ParallaxObjects = () => {
-//   return (
-//     <div className={classes["frameGroup"]}>
-//       <FrameBG />
-//     </div>
-//   )
-// }
 
 export default ParallaxObjects

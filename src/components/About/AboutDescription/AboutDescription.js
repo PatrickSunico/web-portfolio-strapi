@@ -1,8 +1,6 @@
 import React from "react"
 import * as classes from "./AboutDescription.module.scss"
 
-import DOMPurify, { sanitize } from "dompurify"
-
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // Data
@@ -13,7 +11,6 @@ const Description = () => {
   const aboutQuery = useAboutQuery()
   const aboutData = aboutQuery.about.nodes[0].AboutSection
   const portrait = getImage(aboutQuery.portrait)
-  console.log(aboutQuery)
 
   // // Skills
   const renderDesign = aboutData.DesignSkills.map(({ skill, id }) => (

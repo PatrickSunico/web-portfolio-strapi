@@ -3,62 +3,72 @@
     position: relative;
     background-color: var(--hero-background-color);
     height: 100vh;
-    width: 100%;
-    display: flex;
+    width: auto;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    svg {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // width: 100%;
-        // height: 100%;
-        object-fit: contain;
+    z-index: 19;
+
+    // BG Assets
+
+    .borealis {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: auto;
+        z-index: 18;
     }
 
-    .layer1 {
+    .starPattern {
+        display: block;
+        width: 100%;
+        height: auto;
         position: absolute;
-        top: 160px;
-        max-height: 100%;
-        max-width: 100%;
-        right: 700px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -20;
     }
-    .layer2 {
-        top: 2;
-        right: 2;
+
+    .moon {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 0;
+        right: 0;
+        z-index: 17;
+
+        svg {
+            position: absolute;
+            top: -280px;
+            right: -300px;
+        }
     }
-    .layer3 {
-        top: 2;
-        right: 2;
+
+    // Layers
+    .planetLayer1 {
+        position: absolute;
+        top: 20%;
+        right: 40%;
     }
-    .layer4 {
-        top: 2;
-        right: 2;
+    .planetLayer2 {
+        position: absolute;
+        top: 40%;
+        right: 25%;
     }
-    .layer5 {
-        top: 2;
-        right: 2;
+    .planetLayer3 {
+        position: absolute;
+        bottom: 10%;
+        right: 40%;
     }
-    .layer6 {
-        top: 2;
-        right: 2;
+    .planetLayer4 {
+        position: absolute;
+        bottom: 40%;
+        right: 15%;
     }
-    .layer7 {
-        top: 2;
-        right: 2;
-    }
-    .layer8 {
-        top: 2;
-        right: 2;
-    }
-    .layer9 {
-        top: 2;
-        right: 2;
+    .planetLayer5 {
+        position: absolute;
+        bottom: -380px;
+        right: 40px;
     }
 
     // If you want to make the text also hoverable add the tags and elements
