@@ -8,8 +8,8 @@
 
 .contactContainer {
     padding: 3em 0;
-    transform: var(--breakpoint-transform);
-    transition: var(--breakpoint-transition);
+    // transform: var(--breakpoint-transform);
+    // transition: var(--breakpoint-transition);
 }
 
 .gridFormContainer {
@@ -22,8 +22,8 @@
     // First Grid
     .gridContent {
         grid-area: 1/1;
-        transform: var(--breakpoint-transform);
-        transition: var(--breakpoint-transition);
+        // transform: var(--breakpoint-transform);
+        // transition: var(--breakpoint-transition);
         h1 {
             font-weight: var(--fw-bold);
             font-family: var(--default-font);
