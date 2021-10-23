@@ -25,7 +25,7 @@ const Portfolio = () => {
   )
 
   return (
-    <div className={classes["portfolioParent"]}>
+    <div id="portfolio" className={classes["portfolioParent"]}>
       <div className="sectionContainer">
         <div className="container flex-direction-column">
           <div className="sectionHeaderLeft">

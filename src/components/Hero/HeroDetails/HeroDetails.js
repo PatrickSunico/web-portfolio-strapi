@@ -6,7 +6,6 @@ import * as classes from "./HeroDetails.module.scss"
 import * as linkStyles from "../../UI/Button.module.scss"
 import { useHeroDataQuery } from "../../../hooks/useHeroDataQuery"
 import { motion } from "framer-motion"
-import { StaticImage } from "gatsby-plugin-image"
 
 const staggerContainer = {
   show: {
@@ -43,7 +42,6 @@ const HeroDetails = () => {
   const heroQuery = useHeroDataQuery()
   const heroData = heroQuery.heroDetails.nodes[0].HeroSection
   const { headline, secondary_headline, caption, resume } = heroData
-  console.log(resume.localFile.publicURL)
   return (
     <div className={classes["heroAbsolute"]}>
       <div className="heroContainer">

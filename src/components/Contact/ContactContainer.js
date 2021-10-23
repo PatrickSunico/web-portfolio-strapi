@@ -7,7 +7,7 @@ import ContactDetails from "./ContactDetails/ContactDetails"
 
 const ContactContainer = () => {
   return (
-    <div className={classes["contactParent"]}>
+    <div id="contact" className={classes["contactParent"]}>
       <div className={classes["contactContainer"]}>
         <div className="sectionContainer">
           <div className="container flex-direction-column">

@@ -1,14 +1,21 @@
+@use "../../styles/utils/mixins" as *;
+
 // Parent Div
+
 .frameGroup {
     position: relative;
-    background-color: var(--hero-background-color);
     height: 100vh;
     width: auto;
     overflow: hidden;
     z-index: 19;
+    display: block;
+    background-image: url("../../images/star-pattern.png");
+    background-position: center center;
+    background-size: cover;
+    // height: 100%;
+    // width: 100%;
 
     // BG Assets
-
     .borealis {
         position: absolute;
         display: block;
@@ -44,6 +51,12 @@
         }
     }
 
+    .astronaut {
+        position: absolute;
+        top: 60%;
+        right: 30%;
+    }
+
     // Layers
     .planetLayer1 {
         position: absolute;
@@ -70,20 +83,4 @@
         bottom: -380px;
         right: 40px;
     }
-
-    // If you want to make the text also hoverable add the tags and elements
-    /* 
-        ."div" {
-            position: relative;
-
-        }
-        
-    */
 }
-
-// .frameBG {
-//     background-color: var(--hero-background-color);
-//     display: flex;
-//     height: 100%;
-//     width: 100%;
-// }

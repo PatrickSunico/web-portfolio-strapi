@@ -5384,6 +5384,13 @@ gatsby-plugin-sharp@^3.14.1:
     svgo "1.3.2"
     uuid "3.4.0"
 
+gatsby-plugin-smoothscroll@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-smoothscroll/-/gatsby-plugin-smoothscroll-1.2.0.tgz#249c0ad660e167043652b34277f44d16ca2bf4b6"
+  integrity sha512-wfIK06xwbNx91nHVg1YJwlLUJc0EmfWqV8KgvlNr6gFa9pqMx5Mprdp5jDRloAi3+9K0dVCybPO8FfaZ0i4HgA==
+  dependencies:
+    smoothscroll-polyfill "^0.4.4"
+
 gatsby-plugin-typescript@^3.14.0:
   version "3.14.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-3.14.0.tgz#5f079f59576f768025cad0d79feaf62c00812a96"
@@ -9220,11 +9227,6 @@ react-reveal@^1.2.2:
   dependencies:
     prop-types "^15.5.10"
 
-react-scrollspy-nav@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/react-scrollspy-nav/-/react-scrollspy-nav-1.2.4.tgz#67e1a5ea44cce8c41919ecb7fb6970b4fad34c98"
-  integrity sha512-brTLeR08DnYgULVZATYSzfpc6VBwCKKsi8EtJpdzhid/MBZ1htqpuw0NcGTyyZa/ii0g3SzMxAFWJDuUPD84oA==
-
 react-side-effect@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
@@ -9967,6 +9969,11 @@ slugify@^1.4.4:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.1.tgz#a5fcaef29f4e57c6e932ce7044b6ffd9cf81b641"
   integrity sha512-5ofqMTbetNhxlzjYYLBaZFQd6oiTuSkQlyfPEFIMwgUABlZQ0hbk5xIV9Ydd5jghWeRoO7GkiJliUvTpLOjNRA==
+
+smoothscroll-polyfill@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz#3a259131dc6930e6ca80003e1cb03b603b69abf8"
+  integrity sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 
@@ -23,56 +22,58 @@ const IndexPage = props => {
   const [loading, setLoading] = useState(true)
   // Loading Animation
 
-  return (
-    <Layout navigation={props} pageTitle="Home Page">
-      <Navbar navigation={props} />
-      <Seo title="Home" />
+  // return (
+  //   <Layout navigation={props} pageTitle="Home Page">
+  //     <Navbar navigation={props} />
+  //     <Seo title="Home" />
 
-      <ComponentWrapper>
-        <SocialLinks />
-        <Hero />
-        <About />
-        <Experience />
-        <Portfolio />
-        <ProjectList />
-        <ContactContainer />
-      </ComponentWrapper>
-    </Layout>
-  )
+  //     <ComponentWrapper>
+  //       <SocialLinks />
+  //       <Hero />
+  //       <About />
+  //       <Experience />
+  //       <Portfolio />
+  //       <ProjectList />
+  //       <ContactContainer />
+  //     </ComponentWrapper>
+  //   </Layout>
+  // )
 
   // Working Code
-  // useEffect(() => {
-  //   loading
-  //     ? document.querySelector("body").classList.add("loading")
-  //     : document.querySelector("body").classList.remove("loading")
-  // }, [loading])
+  useEffect(() => {
+    loading
+      ? document.querySelector("body").classList.add("loading")
+      : document.querySelector("body").classList.remove("loading")
+  }, [loading])
 
-  // return (
-  // <AnimateSharedLayout type="crossfade">
-  //   <AnimatePresence>
-  //     {loading ? (
-  //       <motion.div key="loader">
-  //         <AnimationLoader setLoading={setLoading} />
-  //       </motion.div>
-  //     ) : (
-  //       <Layout navigation={props} pageTitle="Home Page">
-  //         <Navbar navigation={props} />
-  //         <Seo title="Home" />
+  return (
+    <>
+      <AnimateSharedLayout type="crossfade">
+        <AnimatePresence>
+          {loading ? (
+            <motion.div key="loader">
+              <AnimationLoader setLoading={setLoading} />
+            </motion.div>
+          ) : (
+            <Layout navigation={props} pageTitle="Home Page">
+              <Navbar navigation={props} />
+              <Seo title="Home" />
 
-  //         <ComponentWrapper>
-  //           <SocialLinks />
-  //           <Hero />
-  //           <About />
-  //           <Experience />
-  //           <Portfolio />
-  //           <ProjectList />
-  //           <ContactContainer />
-  //         </ComponentWrapper>
-  //       </Layout>
-  //     )}
-  //   </AnimatePresence>
-  // </AnimateSharedLayout>
-  // )
+              <ComponentWrapper>
+                <SocialLinks />
+                <Hero />
+                <About />
+                <Experience />
+                <Portfolio />
+                <ProjectList />
+                <ContactContainer />
+              </ComponentWrapper>
+            </Layout>
+          )}
+        </AnimatePresence>
+      </AnimateSharedLayout>
+    </>
+  )
 }
 
 export default IndexPage

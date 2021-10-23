@@ -27,22 +27,24 @@ const Experience = () => {
   )
 
   return (
-    <div className={`marginBottom`}>
-      <div className="sectionContainer">
-        <div className="container flex-direction-column">
-          <div className="sectionHeaderRight">
-            <h2>Experience</h2>
-          </div>
+    <section id="experience">
+      <div className={`marginBottom`}>
+        <div className="sectionContainer">
+          <div className="container flex-direction-column">
+            <div className="sectionHeaderRight">
+              <h2>Experience</h2>
+            </div>
 
-          <ExperienceMenu
-            tabs={companiesByYear}
-            onNavClick={setActiveTabId}
-            activeTabId={activeTabId}
-          />
-          <ExperienceTab tab={activeTab} />
+            <ExperienceMenu
+              tabs={companiesByYear}
+              onNavClick={setActiveTabId}
+              activeTabId={activeTabId}
+            />
+            <ExperienceTab tab={activeTab} />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

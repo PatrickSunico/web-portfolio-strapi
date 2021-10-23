@@ -1,15 +1,17 @@
 // React
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-
 import { motion } from "framer-motion"
+
 // Assets
 import Logo from "../../../assets/icons/Logo.svg"
-import * as classes from "../Navbar.module.scss"
 import { FaBars } from "react-icons/fa"
 
 // Components
 import NavbarLinks from "../NavbarLinks"
+
+// Styles
+import * as classes from "../Navbar.module.scss"
 
 // Animation
 const staggerContainer = {
@@ -95,9 +97,7 @@ const NavbarIndex = ({ navbarActive }) => {
             className={`${classes["logo"]}`}
             variants={logoFadeInDown}
           >
-            <Link to="/">
-              <Logo />
-            </Link>
+            <Logo />
           </motion.div>
 
           <motion.div variants={logoFadeInDown}>
@@ -121,7 +121,6 @@ const NavbarIndex = ({ navbarActive }) => {
             {!sidebar && (
               <div className={classes["blur"]} onClick={toggleHandler} />
             )}
-
             <ul
               className={`${
                 sidebar ? `${classes["slideIn"]}` : `${classes["slideOut"]}`

@@ -33,13 +33,22 @@ const navLinksFadeInDown = {
 }
 
 const NavbarLinks = () => {
-  const renderLinks = MenuData.map((link, index) => (
-    <motion.li key={index} variants={navLinksFadeInDown}>
-      <Link to="/">{link.title}</Link>
-    </motion.li>
-  ))
-
-  return <>{renderLinks}</>
+  return (
+    <>
+      <li>
+        <button id="about" onClick={() => scrollTo("#about")}>
+          About
+        </button>
+      </li>
+      {/* {MenuData.map((link, index) => (
+        <motion.li key={index} variants={navLinksFadeInDown}>
+          <Link id={link.id} onClick={() => scrollTo(link.link)}>
+            {link.title}
+          </Link>
+        </motion.li>
+      ))} */}
+    </>
+  )
 }
 
 export default NavbarLinks

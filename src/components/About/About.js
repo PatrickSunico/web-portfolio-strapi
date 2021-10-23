@@ -3,11 +3,13 @@ import AboutDescription from "./AboutDescription/AboutDescription"
 
 const About = () => {
   return (
-    <div className="marginTop">
-      <div className="sectionContainer">
-        <div className="container flex-direction-column">
-          <div className="marginTop">
-            <AboutDescription />
+    <div id="about">
+      <div className="marginTop">
+        <div className="sectionContainer">
+          <div className="container flex-direction-column">
+            <div className="marginTop">
+              <AboutDescription />
+            </div>
           </div>
         </div>
       </div>
