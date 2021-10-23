@@ -161,6 +161,7 @@
                     color: #fff;
                     font-size: 18px;
                     transition: var(--transition-all);
+                    cursor: pointer;
                     &:hover {
                         color: var(--primary-hover);
                     }
@@ -210,7 +211,11 @@
                     font-size: var(--default-fs);
                     margin: 0 25px;
                     transition: var(--transition-all);
+                    cursor: pointer;
                     &:hover {
+                        color: var(--primary-hover);
+                    }
+                    &.active {
                         color: var(--primary-hover);
                     }
                 }

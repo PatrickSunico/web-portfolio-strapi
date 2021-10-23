@@ -1,9 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
+import { Link } from "react-scroll"
 
 import { motion } from "framer-motion"
 // Data
 import { MenuData } from "../../data/MenuData"
+
+import * as classes from "./Navbar.module.scss"
 
 const navLinksFadeInDown = {
   // Default state hide it first then reveal it
@@ -37,8 +40,16 @@ const NavbarLinks = () => {
     <>
       {MenuData.map((link, index) => (
         <motion.li key={index} variants={navLinksFadeInDown}>
+          <Link
+            to={link.link}
+            smooth={true}
+            duration={1000}
+            activeClass={classes["active"]}
+            spy={true}
+          >
+            {link.title}
+          </Link>
           {/* <AnchorLink id={link.id} to={link.link}> */}
-          {link.title}
           {/* </AnchorLink> */}
         </motion.li>
       ))}

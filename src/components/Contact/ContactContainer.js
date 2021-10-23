@@ -11,14 +11,12 @@ const ContactContainer = () => {
       <div className={classes["contactContainer"]}>
         <div className="sectionContainer">
           <div className="container flex-direction-column">
-            <div className={classes["contactContainer"]}>
-              {/* Grid */}
-              <div className={classes["gridFormContainer"]}>
-                {/* Contact Form */}
-                <ContactForm />
-                {/* Grid Details */}
-                <ContactDetails />
-              </div>
+            {/* Grid */}
+            <div className={classes["gridFormContainer"]}>
+              {/* Contact Form */}
+              <ContactForm />
+              {/* Grid Details */}
+              <ContactDetails />
             </div>
 
             <div className={classes["copyright"]}>

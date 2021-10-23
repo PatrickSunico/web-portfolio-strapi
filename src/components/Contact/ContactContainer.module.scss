@@ -7,9 +7,10 @@
 }
 
 .contactContainer {
-    padding: 3em 0;
-    // transform: var(--breakpoint-transform);
-    // transition: var(--breakpoint-transition);
+    padding: 5em 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .gridFormContainer {
