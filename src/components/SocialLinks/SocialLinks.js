@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import * as classes from "./SocialLinks.module.scss"
 import { motion } from "framer-motion"
 

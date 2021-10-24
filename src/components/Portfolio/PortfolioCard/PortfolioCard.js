@@ -1,6 +1,5 @@
 import React from "react"
 
-import { Link } from "gatsby"
 import * as classes from "./PortfolioCard.module.scss"
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -9,7 +8,7 @@ import WebLink from "../../../assets/icons/WebLink.svg"
 import Github from "../../../assets/icons/GithubLink.svg"
 
 const PortfolioCard = props => {
-  const { projectDetails, projectTitle, CardCover, slug } = props.content
+  const { projectDetails, projectTitle, CardCover } = props.content
 
   const image = getImage(CardCover.localFile)
   const { projectCategories, socialLinks } = projectDetails
@@ -28,9 +27,6 @@ const PortfolioCard = props => {
               </div>
 
               <h4>{projectTitle}</h4>
-              {/* <Link className={classes["projectLink"]} to={`/${slug}`}>
-                View Project
-              </Link> */}
             </div>
 
             <ul className={classes["socialLinks"]}>
@@ -63,9 +59,7 @@ const PortfolioCard = props => {
         </div>
 
         <div className={classes["imageWrapper"]}>
-          {/* <Link to={`/${slug}`}> */}
           <GatsbyImage image={image} alt="design-cover" className="" />
-          {/* </Link> */}
         </div>
       </div>
     </>

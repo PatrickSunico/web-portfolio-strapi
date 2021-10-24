@@ -42,6 +42,7 @@
     margin: 10px 0;
     display: flex;
     justify-content: center;
+    transition: var(--transition-all);
 
     .alignment {
         display: flex;
@@ -87,6 +88,28 @@
     .desktopMenu {
         display: none;
         visibility: hidden;
+    }
+
+    .closeButton {
+        display: block;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            height: 2em;
+            width: 2em;
+            transition: var(--transition-all);
+
+            &:hover {
+                fill: var(--primary-hover);
+            }
+        }
     }
 
     .mobileMenu {
@@ -143,14 +166,6 @@
                 visibility: visible;
             }
 
-            .resume {
-                a {
-                    padding: 14px ​20px;
-                    &:hover {
-                        color: var(--white);
-                    }
-                }
-            }
             li {
                 margin: 30px 20px;
                 a {
@@ -224,6 +239,9 @@
 
         .mobileMenu {
             visibility: hidden;
+            display: none;
+        }
+        .closeButton {
             display: none;
         }
     }

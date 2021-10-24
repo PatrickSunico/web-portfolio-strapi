@@ -5,6 +5,7 @@
     width: 1900px;
     margin: 0 auto;
     display: none;
+    z-index: 22;
     .socialList {
         width: 40px;
         position: fixed;
@@ -57,6 +58,7 @@
 @include respond(tablets) {
     .socialLinksWrapper {
         display: block;
+
         .socialList {
             // left: 335px;
         }

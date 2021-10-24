@@ -53,14 +53,6 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: `gatsby-plugin-remote-images`,
-    //   options: {
-    //     nodeType: "allStrapiPortfolios.edges.node.CardCover.url", // Created Node type name
-    //     imagePath: "url", // The image url name in test node type
-    //   },
-    // },
-
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

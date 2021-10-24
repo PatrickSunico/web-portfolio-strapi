@@ -1,7 +1,6 @@
 import React from "react"
 import * as classes from "./Button.module.scss"
 
-import { Link } from "gatsby"
 import { motion } from "framer-motion"
 
 const AnchorButton = props => {

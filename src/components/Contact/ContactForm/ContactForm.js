@@ -4,13 +4,13 @@ import * as classes from "./ContactForm.module.scss"
 import Button from "../../UI/Button"
 
 import { useForm } from "react-hook-form"
-import { axios } from "axios"
+// import { axios } from "axios"
 
 const ContactForm = () => {
   const {
     register,
     formState: { errors },
-    reset,
+    // reset,
     handleSubmit,
   } = useForm({
     mode: "onSubmit",
@@ -88,7 +88,7 @@ const ContactForm = () => {
             id="email"
             aria-invalid={errors.email ? "true" : "false"}
             className={`${classes["inputField"]} ${
-              errors.name ? `${classes["errorField"]}` : ""
+              errors.email ? `${classes["errorField"]}` : ""
             }`}
             required
             placeholder=" "

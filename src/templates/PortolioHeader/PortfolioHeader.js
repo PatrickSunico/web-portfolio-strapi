@@ -34,7 +34,7 @@ const PortfolioHeader = ({
             ))}
           </div>
 
-          <ul className={classes["projectLinks"]}>
+          <ul>
             {socialLinks.map(
               ({ availableLinks, socialLink, id }) =>
                 (availableLinks === "Behance" && (

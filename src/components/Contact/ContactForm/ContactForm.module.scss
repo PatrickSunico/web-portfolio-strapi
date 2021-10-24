@@ -40,7 +40,7 @@ p.errorMessage {
 
 // Form Specific
 .gridForm {
-    margin: 2em 0;
+    // margin: 2em 0;
     padding: 0;
     input {
         appearance: none;
@@ -57,7 +57,7 @@ p.errorMessage {
         padding-top: 1.5rem;
         color: #fff;
         & + .input {
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
     }
 
@@ -94,7 +94,7 @@ p.errorMessage {
     }
 
     .errorField {
-        // border-bottom: 2px solid var(--error-color);
+        border-bottom: 2px solid var(--error-color);
     }
     .errorLabel {
         color: var(--error-color);

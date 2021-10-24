@@ -8,15 +8,18 @@ const PortfolioMenu = props => {
     <>
       <ul className={tabStyles["tabsNavPortfolio"]}>
         {props.tabs.map((item, index) => (
-          <li key={index} className={tabStyles["tabsItem"]}>
-            <a
+          <li key={index}>
+            <div
               className={`${tabStyles.tabsLinkPortfolio} ${
                 props.activeMenuType === item.type && tabStyles.active
               }`}
               onClick={() => props.onNavClick(item.type)}
+              aria-hidden="true"
+              role="button"
+              tabIndex={index}
             >
               {item.title}
-            </a>
+            </div>
           </li>
         ))}
       </ul>

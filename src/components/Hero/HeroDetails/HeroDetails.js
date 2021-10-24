@@ -1,5 +1,4 @@
 import React from "react"
-import AnchorButton from "../../UI/AnchorButton"
 
 // Styles
 import * as classes from "./HeroDetails.module.scss"

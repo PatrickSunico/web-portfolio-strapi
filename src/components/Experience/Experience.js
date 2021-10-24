@@ -1,8 +1,4 @@
 import React, { useState, useMemo } from "react"
-import * as tabStyles from "../UI/Tabs.module.scss"
-import * as classes from "./Experience.module.scss"
-import { workHistory } from "../../data/workHistory"
-
 // Components
 import ExperienceTab from "./ExperienceTab/ExperienceTab"
 import ExperienceMenu from "./ExperienceMenu/ExperienceMenu"

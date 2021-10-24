@@ -48,6 +48,11 @@
     font-weight: var(--fw-regular);
     transition: var(--transition-all);
     font-size: var(--tabs-font-size);
+    font-family: var(--default-font);
+    // outline: none;
+    // border: none;
+    // background-color: transparent;
+
     &:hover {
         color: var(--tabs-link-hover);
     }

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { motion } from "framer-motion"
-// import * as classes from "./Animation.module.scss"
 import "./Animation.scss"
 const easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -8,12 +7,12 @@ const showLoader = {
   hidden: {
     opacity: 1,
     y: 0,
-    ease: [0.6, -0.05, 0.01, 0.99],
+    ease: easing,
   },
   show: {
     opacity: 1,
     y: 0,
-    ease: [0.6, -0.05, 0.01, 0.99],
+    ease: easing,
     transition: {
       delay: 1.8,
       duration: 0.02,

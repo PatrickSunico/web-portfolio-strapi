@@ -1,7 +1,7 @@
 import React from "react"
-// import { Link } from "gatsby"
 import { Link } from "react-scroll"
 
+import { FaTimes } from "react-icons/fa"
 import { motion } from "framer-motion"
 // Data
 import { MenuData } from "../../data/MenuData"
@@ -35,9 +35,18 @@ const navLinksFadeInDown = {
   },
 }
 
-const NavbarLinks = () => {
+const NavbarLinks = props => {
   return (
     <>
+      <div
+        className={`${classes["closeButton"]}`}
+        aria-hidden="true"
+        role="button"
+        tabIndex="0"
+        onClick={props.toggleSideNav}
+      >
+        <FaTimes />
+      </div>
       {MenuData.map((link, index) => (
         <motion.li key={index} variants={navLinksFadeInDown}>
           <Link
@@ -45,12 +54,14 @@ const NavbarLinks = () => {
             smooth={true}
             duration={1000}
             activeClass={classes["active"]}
+            hashSpy={true}
             spy={true}
+            onClick={props.toggleSideNav}
+            href={`#${link.link}`}
+            role="menuItem"
           >
             {link.title}
           </Link>
-          {/* <AnchorLink id={link.id} to={link.link}> */}
-          {/* </AnchorLink> */}
         </motion.li>
       ))}
     </>

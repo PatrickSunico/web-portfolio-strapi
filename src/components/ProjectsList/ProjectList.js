@@ -13,7 +13,7 @@ const ProjectList = () => {
   const otherProjectsData = otherProjectsQuery.other_projects.nodes
 
   return (
-    <div className={`${classes["projectListParent"]} marginTop marginBottom`}>
+    <div className={`marginTop marginBottom`}>
       <div className="sectionContainer">
         <div className="container flex-direction-column">
           <div className="sectionHeaderRight">

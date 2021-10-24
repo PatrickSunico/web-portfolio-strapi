@@ -8,14 +8,17 @@ const ExperienceMenu = props => {
     <ul className={tabStyles["tabsNav"]}>
       {companies.map(({ node }, index) => (
         <li key={node.strapiId}>
-          <a
+          <div
             className={`${tabStyles.tabsLink} ${
-              props.activeTabId === node.strapiId && tabStyles.active
+              props.activeTabId === node.strapiId ? tabStyles.active : ""
             }`}
             onClick={() => props.onNavClick(node.strapiId)}
+            role="button"
+            tabIndex={index}
+            aria-hidden="true"
           >
             {node.company}
-          </a>
+          </div>
         </li>
       ))}
     </ul>

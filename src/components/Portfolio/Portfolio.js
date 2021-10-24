@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from "react"
-import * as classes from "./Portfolio.module.scss"
 
 // Components
 import PortfolioMenu from "./PortfolioMenu/PortfolioMenu"
@@ -18,14 +17,21 @@ const Portfolio = () => {
 
   const activeTab = useMemo(
     () => menu.find(menu => menu.type === activeMenuType),
-    [activeMenuType, menu]
+    [activeMenuType]
   )
+
+  const handleKeyPress = (event, data) => {
+    if (event.key === "Enter" || event.charCode === 13) {
+      setActiveMenuType(data)
+    }
+  }
+
   const projects = projectsList.filter(
     project => project.node.projectType === activeMenuType
   )
 
   return (
-    <div id="portfolio" className={classes["portfolioParent"]}>
+    <div id="portfolio">
       <div className="sectionContainer">
         <div className="container flex-direction-column">
           <div className="sectionHeaderLeft">
@@ -36,6 +42,7 @@ const Portfolio = () => {
           <PortfolioMenu
             tabs={menu}
             onNavClick={setActiveMenuType}
+            onEnter={handleKeyPress}
             activeMenuType={activeMenuType}
           />
 

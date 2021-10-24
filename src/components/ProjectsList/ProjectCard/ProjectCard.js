@@ -6,8 +6,7 @@ import BehanceLink from "../../../assets/icons/BehanceLink.svg"
 import WebLink from "../../../assets/icons/WebLink.svg"
 
 const ProjectCard = props => {
-  const { ProjectCategory, ProjectTitle, ProjectTools, SocialLink, strapiId } =
-    props.content
+  const { ProjectCategory, ProjectTitle, SocialLink, strapiId } = props.content
   const stringifyId = strapiId.toString()
   const padStart = stringifyId.padStart(2, "0")
 
@@ -21,26 +20,26 @@ const ProjectCard = props => {
         </div>
         <h5> {ProjectTitle} </h5>
 
-        <ul className={classes["projectLinks"]}>
+        <ul>
           {SocialLink.map(
             ({ availableLinks, socialLink, id }) =>
               (availableLinks === "Behance" && (
                 <li key={id}>
-                  <a href={socialLink} target="_blank" rel="noopener">
+                  <a href={socialLink} target="_blank" rel="noreferrer">
                     <BehanceLink />
                   </a>
                 </li>
               )) ||
               (availableLinks === "Github" && (
                 <li key={id}>
-                  <a href={socialLink} target="_blank" rel="noopener">
+                  <a href={socialLink} target="_blank" rel="noreferrer">
                     <GithubLink />
                   </a>
                 </li>
               )) ||
               (availableLinks === "Web" && (
                 <li key={id}>
-                  <a href={socialLink} target="_blank" rel="noopener">
+                  <a href={socialLink} target="_blank" rel="noreferrer">
                     <WebLink />
                   </a>
                 </li>

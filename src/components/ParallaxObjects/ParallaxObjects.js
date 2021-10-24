@@ -138,13 +138,29 @@ const ParallaxObjects = props => {
     >
       {width > 578 && (
         <ParallaxGroup>
-          <Moon animate={moon} />
-          <Planet1 animate={planet1} />
-          <Planet2 animate={planet2} />
-          <Planet3 animate={planet3} />
-          <Planet4 animate={planet4} />
-          <Planet5 animate={planet5} />
-          <Astronaut animate={astronaut} />
+          <Borealis className={classes["borealis"]} />
+          <StarPattern className={classes["starPattern"]} />
+          <Moon
+          // animate={moon}
+          />
+          <Planet1
+          // animate={planet1}
+          />
+          <Planet2
+          // animate={planet2}
+          />
+          <Planet3
+          // animate={planet3}
+          />
+          <Planet4
+          // animate={planet4}
+          />
+          <Planet5
+          // animate={planet5}
+          />
+          <Astronaut
+          // animate={astronaut}
+          />
         </ParallaxGroup>
       )}
 

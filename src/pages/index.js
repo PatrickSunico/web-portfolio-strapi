@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
 
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 
 import Layout from "../components/layout"
 import ComponentWrapper from "../components/UI/ComponentWrapper"
-// import ComponentWrapper from "../components/UI/ComponentWrapper"
 import Seo from "../components/seo"
 
 import Navbar from "../components/Navbar/Navbar"

@@ -1,6 +1,7 @@
 // React
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import { Link } from "react-scroll"
+
 import { motion } from "framer-motion"
 
 // Assets
@@ -97,7 +98,9 @@ const NavbarIndex = ({ navbarActive }) => {
             className={`${classes["logo"]}`}
             variants={logoFadeInDown}
           >
-            <Logo />
+            <Link to="hero" smooth={true} duration={1000} spy={true}>
+              <Logo />
+            </Link>
           </motion.div>
 
           <motion.div variants={logoFadeInDown}>
@@ -119,14 +122,18 @@ const NavbarIndex = ({ navbarActive }) => {
           {/* Mobile Menu */}
           <div className={`${classes["mobileMenu"]}`}>
             {!sidebar && (
-              <div className={classes["blur"]} onClick={toggleHandler} />
+              <div
+                className={classes["blur"]}
+                onClick={toggleHandler}
+                aria-hidden="true"
+              />
             )}
             <ul
               className={`${
                 sidebar ? `${classes["slideIn"]}` : `${classes["slideOut"]}`
               }`}
             >
-              <NavbarLinks />
+              <NavbarLinks toggleSideNav={toggleHandler} />
             </ul>
           </div>
         </motion.div>
