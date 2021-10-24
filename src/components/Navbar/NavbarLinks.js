@@ -9,7 +9,6 @@ import { MenuData } from "../../data/MenuData"
 import * as classes from "./Navbar.module.scss"
 
 const navLinksFadeInDown = {
-  // Default state hide it first then reveal it
   hidden: {
     opacity: 0,
     y: -20,

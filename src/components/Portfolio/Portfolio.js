@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react"
+import Fade from "react-reveal/Fade"
 
 // Components
 import PortfolioMenu from "./PortfolioMenu/PortfolioMenu"
@@ -31,26 +32,27 @@ const Portfolio = () => {
   )
 
   return (
-    <div id="portfolio">
+    <section id="portfolio">
       <div className="sectionContainer">
         <div className="container flex-direction-column">
-          <div className="sectionHeaderLeft">
-            <h2>Portfolio</h2>
-          </div>
+          <Fade big>
+            <div className="sectionHeaderLeft">
+              <h2>Portfolio</h2>
+            </div>
 
-          {/* Tabs Here */}
-          <PortfolioMenu
-            tabs={menu}
-            onNavClick={setActiveMenuType}
-            onEnter={handleKeyPress}
-            activeMenuType={activeMenuType}
-          />
-
-          {/* Tab Content */}
-          <PortfolioTab tab={activeTab} contents={projects} />
+            {/* Tabs Here */}
+            <PortfolioMenu
+              tabs={menu}
+              onNavClick={setActiveMenuType}
+              onEnter={handleKeyPress}
+              activeMenuType={activeMenuType}
+            />
+            {/* Tab Content */}
+            <PortfolioTab tab={activeTab} contents={projects} />
+          </Fade>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

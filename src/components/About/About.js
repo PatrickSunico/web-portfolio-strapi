@@ -1,19 +1,22 @@
 import React from "react"
 import AboutDescription from "./AboutDescription/AboutDescription"
+import Fade from "react-reveal/Fade"
 
 const About = () => {
   return (
-    <div id="about">
+    <section id="about">
       <div className="marginTop">
         <div className="sectionContainer">
           <div className="container flex-direction-column">
             <div className="marginTop">
-              <AboutDescription />
+              <Fade big>
+                <AboutDescription />
+              </Fade>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

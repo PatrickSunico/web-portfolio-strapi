@@ -7,7 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 // BG Layers
 import Borealis from "../../assets/svg-layers/borealis.svg"
-import StarPattern from "../../assets/svg-layers/star-pattern.svg"
+// import StarPattern from "../../assets/svg-layers/star-pattern.svg"
 
 // Planets
 import MoonLayer from "../../assets/svg-layers/moon.svg"
@@ -139,7 +139,7 @@ const ParallaxObjects = props => {
       {width > 578 && (
         <ParallaxGroup>
           <Borealis className={classes["borealis"]} />
-          <StarPattern className={classes["starPattern"]} />
+          {/* <StarPattern className={classes["starPattern"]} /> */}
           <Moon
           // animate={moon}
           />

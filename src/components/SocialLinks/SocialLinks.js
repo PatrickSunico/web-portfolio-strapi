@@ -59,12 +59,12 @@ const SocialLinks = () => {
           </a>
         </motion.li>
         <motion.li variants={itemToShow}>
-          <a href={socialLinks.behance_link} rel="noopener" targe="_blank">
+          <a href={socialLinks.linkedin_link} rel="noopener" targe="_blank">
             <LinkedIn />
           </a>
         </motion.li>
         <motion.li variants={itemToShow}>
-          <a href={socialLinks.linkedin_link} rel="noopener" targe="_blank">
+          <a href={socialLinks.behance_link} rel="noopener" targe="_blank">
             <Behance />
           </a>
         </motion.li>

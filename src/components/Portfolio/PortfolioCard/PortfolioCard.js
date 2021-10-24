@@ -1,4 +1,5 @@
 import React from "react"
+import Fade from "react-reveal/Fade"
 
 import * as classes from "./PortfolioCard.module.scss"
 
@@ -16,52 +17,54 @@ const PortfolioCard = props => {
   return (
     <>
       {/* Portfolio Cards */}
-      <div className={classes["portfolioCard"]}>
-        <div className={classes["content"]}>
-          <div className={`${classes["details"]}`}>
-            <div className={classes["detailsSpacing"]}>
-              <div className={classes["categories"]}>
-                {projectCategories.map(({ projectCategory, id }) => (
-                  <p key={id}>{projectCategory}</p>
-                ))}
+      <Fade big>
+        <div className={classes["portfolioCard"]}>
+          <div className={classes["content"]}>
+            <div className={`${classes["details"]}`}>
+              <div className={classes["detailsSpacing"]}>
+                <div className={classes["categories"]}>
+                  {projectCategories.map(({ projectCategory, id }) => (
+                    <p key={id}>{projectCategory}</p>
+                  ))}
+                </div>
+
+                <h4>{projectTitle}</h4>
               </div>
 
-              <h4>{projectTitle}</h4>
+              <ul className={classes["socialLinks"]}>
+                {socialLinks.map(
+                  ({ availableLinks, socialLink, id }) =>
+                    (availableLinks === "Behance" && (
+                      <li key={id} className={classes["link"]}>
+                        <a href={socialLink}>
+                          <Behance />
+                        </a>
+                      </li>
+                    )) ||
+                    (availableLinks === "Github" && (
+                      <li key={id} className={classes["link"]}>
+                        <a href={socialLink}>
+                          <Github />
+                        </a>
+                      </li>
+                    )) ||
+                    (availableLinks === "WebLink" && (
+                      <li key={id} className={classes["link"]}>
+                        <a href={socialLink}>
+                          <WebLink />
+                        </a>
+                      </li>
+                    ))
+                )}
+              </ul>
             </div>
+          </div>
 
-            <ul className={classes["socialLinks"]}>
-              {socialLinks.map(
-                ({ availableLinks, socialLink, id }) =>
-                  (availableLinks === "Behance" && (
-                    <li key={id} className={classes["link"]}>
-                      <a href={socialLink}>
-                        <Behance />
-                      </a>
-                    </li>
-                  )) ||
-                  (availableLinks === "Github" && (
-                    <li key={id} className={classes["link"]}>
-                      <a href={socialLink}>
-                        <Github />
-                      </a>
-                    </li>
-                  )) ||
-                  (availableLinks === "WebLink" && (
-                    <li key={id} className={classes["link"]}>
-                      <a href={socialLink}>
-                        <WebLink />
-                      </a>
-                    </li>
-                  ))
-              )}
-            </ul>
+          <div className={classes["imageWrapper"]}>
+            <GatsbyImage image={image} alt="design-cover" className="" />
           </div>
         </div>
-
-        <div className={classes["imageWrapper"]}>
-          <GatsbyImage image={image} alt="design-cover" className="" />
-        </div>
-      </div>
+      </Fade>
     </>
   )
 }

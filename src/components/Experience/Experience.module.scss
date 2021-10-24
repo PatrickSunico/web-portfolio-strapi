@@ -1,11 +1,11 @@
 @use "../../styles/utils/mixins" as *;
 
-.experienceParent {
-    // margin: 2em 0;
+.experienceContainer {
+    padding: 3em 0;
 }
 
 @include respond(laptop) {
-    .experienceParent {
-        // margin: 10em 0;
+    .experienceContainer {
+        padding: 3em 0;
     }
 }

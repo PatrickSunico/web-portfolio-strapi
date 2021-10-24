@@ -8,13 +8,13 @@ import HeroDetails from "./HeroDetails/HeroDetails"
 
 const Hero = () => {
   return (
-    <>
-      <motion.div id="hero" className={classes["hero"]}>
+    <section id="hero">
+      <motion.div className={classes["hero"]}>
         <ParallaxObjects>
           <HeroDetails />
         </ParallaxObjects>
       </motion.div>
-    </>
+    </section>
   )
 }
 

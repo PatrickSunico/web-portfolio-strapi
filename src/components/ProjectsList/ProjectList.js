@@ -13,21 +13,23 @@ const ProjectList = () => {
   const otherProjectsData = otherProjectsQuery.other_projects.nodes
 
   return (
-    <div className={`marginTop marginBottom`}>
-      <div className="sectionContainer">
-        <div className="container flex-direction-column">
-          <div className="sectionHeaderRight">
-            <h2>Other Projects</h2>
-          </div>
+    <section id="other-projects">
+      <div className={`marginTop marginBottom`}>
+        <div className="sectionContainer">
+          <div className="container flex-direction-column">
+            <div className="sectionHeaderRight">
+              <h2>Other Projects</h2>
+            </div>
 
-          <div className={classes["projectsGrid"]}>
-            {otherProjectsData.map((content, index) => (
-              <ProjectCard key={content.strapiId} content={content} />
-            ))}
+            <div className={classes["projectsGrid"]}>
+              {otherProjectsData.map((content, index) => (
+                <ProjectCard key={content.strapiId} content={content} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

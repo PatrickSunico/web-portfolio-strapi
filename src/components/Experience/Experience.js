@@ -1,4 +1,8 @@
 import React, { useState, useMemo } from "react"
+import Fade from "react-reveal/Fade"
+
+// Styles
+import * as classes from "./Experience.module.scss"
 // Components
 import ExperienceTab from "./ExperienceTab/ExperienceTab"
 import ExperienceMenu from "./ExperienceMenu/ExperienceMenu"
@@ -24,19 +28,23 @@ const Experience = () => {
 
   return (
     <section id="experience">
-      <div className={`marginBottom`}>
+      <div className={`marginBottom ${classes["experienceContainer"]}`}>
         <div className="sectionContainer">
           <div className="container flex-direction-column">
-            <div className="sectionHeaderRight">
-              <h2>Experience</h2>
-            </div>
+            <Fade big>
+              <div className="sectionHeaderRight">
+                <h2>Experience</h2>
+              </div>
+            </Fade>
 
             <ExperienceMenu
               tabs={companiesByYear}
               onNavClick={setActiveTabId}
               activeTabId={activeTabId}
             />
-            <ExperienceTab tab={activeTab} />
+            <Fade big>
+              <ExperienceTab tab={activeTab} />
+            </Fade>
           </div>
         </div>
       </div>
