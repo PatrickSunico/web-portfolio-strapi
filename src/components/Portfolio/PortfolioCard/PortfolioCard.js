@@ -61,7 +61,7 @@ const PortfolioCard = props => {
           </div>
 
           <div className={classes["imageWrapper"]}>
-            <GatsbyImage image={image} alt="design-cover" className="" />
+            <GatsbyImage image={image} alt="design-cover" />
           </div>
         </div>
       </Fade>

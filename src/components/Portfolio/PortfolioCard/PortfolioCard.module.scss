@@ -200,6 +200,8 @@
 @include respond(tablets) {
     // Odd Every 2nth Element
     .portfolioCard {
+        margin: 5em 0;
+
         // margin: 8em 0;
         // Every 1st and 3rd Odd
         display: grid;

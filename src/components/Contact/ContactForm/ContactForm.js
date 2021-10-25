@@ -1,19 +1,25 @@
+// React Dependencies
 import React from "react"
-
+import { useForm } from "react-hook-form"
+// Styles
 import * as classes from "./ContactForm.module.scss"
+
+// Components
 import Button from "../../UI/Button"
 
-import { useForm } from "react-hook-form"
-// import { axios } from "axios"
+// HTTP Requests
+import ReCAPTCHA from "react-google-recaptcha"
+import { axios } from "axios"
+import * as qs from "query-string"
 
 const ContactForm = () => {
   const {
-    register,
-    formState: { errors },
-    // reset,
-    handleSubmit,
+    register, // register field names
+    formState: { errors }, // formState for errors
+    reset, // resets the form
+    handleSubmit, // readies the form submission
   } = useForm({
-    mode: "onSubmit",
+    mode: "onSubmit", // actual form submission
   })
 
   // const [loading, isLoading] = useState(false)
@@ -32,7 +38,9 @@ const ContactForm = () => {
   //     .then(() => console.log("Form successfully submitted"))
   //     .catch(error => alert(error))
   // }
-  const onSubmit = async data => {
+  // console.log(handleSubmit)
+
+  const onSubmit = async (data, e) => {
     const formData = await data
     const constructForm = new FormData()
     // Convert JSON to FormData
@@ -40,6 +48,8 @@ const ContactForm = () => {
       constructForm.append(key, formData[key])
     }
   }
+  // Handles the errors
+  const onError = (errors, e) => console.log(errors, e)
 
   return (
     <div className={classes["gridContent"]}>
@@ -49,12 +59,15 @@ const ContactForm = () => {
         can.
       </p>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        name="contact_me"
+        onSubmit={handleSubmit(onSubmit, onError)}
         className={classes["gridForm"]}
         noValidate="novalidate"
+        method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
       >
+        <input type="hidden" name="form-name" value="contact_form" />
         <div className={classes["input"]}>
           <input
             id="name"
@@ -147,6 +160,12 @@ const ContactForm = () => {
             <p className={classes["errorMessage"]}>{errors.message.message}</p>
           )}
         </div>
+
+        <br />
+        <ReCAPTCHA
+          sitekey="{process.env.GATSBY_RECAPTCHA_KEY}"
+          size="invisible"
+        />
 
         <Button classNames={`buttonSubmit`} type="submit">
           Submit
