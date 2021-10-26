@@ -14,6 +14,10 @@
     font-weight: var(--fw-bold);
     transition: var(--transition-all);
     line-height: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
     &:hover {
         transform: var(--translateY);
@@ -25,4 +29,23 @@
     @extend .button;
     margin: 40px 0;
     width: 100%;
+
+    &:disabled {
+        background-color: var(--disableBGColor);
+        color: var(--disableColor);
+        cursor: not-allowed;
+        &:hover {
+            transform: var(--disableTransform);
+            background-color: var(--disableHover);
+        }
+    }
+
+    svg {
+        width: 40px;
+        margin-left: 20px;
+        circle {
+            display: flex;
+            align-items: center;
+        }
+    }
 }

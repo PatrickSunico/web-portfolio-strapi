@@ -55,22 +55,22 @@
             object-position: 60% 50%;
             width: auto;
 
-            // filter: var(--filter-saturate);
-            // filter: var(--filter-gray);
-            // -webkit-filter: grayscale(100%);
-            // -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-            // filter: alpha(opacity=40);
-            // -moz-opacity: 0.6;
-            // -khtml-opacity: 0.6;
-            // opacity: 0.6;
-            // transition: var(--transition-all);
+            filter: var(--filter-saturate);
+            filter: var(--filter-gray);
+            -webkit-filter: grayscale(100%);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+            filter: alpha(opacity=40);
+            -moz-opacity: 0.6;
+            -khtml-opacity: 0.6;
+            opacity: 0.6;
+            transition: var(--transition-all);
 
-            // filter: grayscale(100%) contrast(1) brightness(50%);
-            // mix-blend-mode: multiply;
+            filter: grayscale(100%) contrast(1) brightness(50%);
+            mix-blend-mode: multiply;
 
             // Zoom In
-            // -webkit-transform: scale(1.1);
-            // transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
             // -webkit-transition: 0.3s ease-in-out;
             // transition: 0.3s ease-in-out;
 
@@ -80,11 +80,12 @@
             // -moz-filter: brightness(70%);
             // transition: var(--transition-all);
             &:hover {
-                // filter: brightness(80%);
-                // -webkit-filter: brightness(80%);
+                filter: brightness(80%);
+                -webkit-filter: brightness(80%);
 
                 -webkit-transform: scale(1);
                 transform: scale(1);
+                // transition: var(--transition-all);
 
                 // hover
                 filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
@@ -94,6 +95,7 @@
                 -moz-opacity: 1;
                 -khtml-opacity: 1;
                 opacity: 1;
+                transition: var(--transition-all);
             }
         }
     }

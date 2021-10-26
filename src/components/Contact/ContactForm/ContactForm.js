@@ -1,51 +1,66 @@
 // React Dependencies
-import React from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 // Styles
 import * as classes from "./ContactForm.module.scss"
 
 // Components
 import Button from "../../UI/Button"
+import Message from "../Message/Message"
+import SubmitLoader from "../../../assets/icons/SubmitLoader.svg"
 
 // HTTP Requests
-import ReCAPTCHA from "react-google-recaptcha"
-import { axios } from "axios"
-import * as qs from "query-string"
+import axios from "axios"
 
 const ContactForm = () => {
+  // Messages
+  const [alert, setAlert] = useState(false)
+
+  // Forms
   const {
     register, // register field names
-    formState: { errors }, // formState for errors
+    formState: { errors, isSubmitting, isValid, isDirty }, // formState for errors
     reset, // resets the form
     handleSubmit, // readies the form submission
   } = useForm({
-    mode: "onSubmit", // actual form submission
+    mode: "onChange", // actual form submission
   })
 
-  // const [loading, isLoading] = useState(false)
-
-  // document.querySelector("form").addEventListener("submit", handleSubmit)
-
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   let myForm = document.getElementById("pizzaOrder")
-  //   let formData = new FormData(myForm)
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: new URLSearchParams(formData).toString(),
-  //   })
-  //     .then(() => console.log("Form successfully submitted"))
-  //     .catch(error => alert(error))
-  // }
-  // console.log(handleSubmit)
-
   const onSubmit = async (data, e) => {
-    const formData = await data
-    const constructForm = new FormData()
-    // Convert JSON to FormData
-    for (var key in formData) {
-      constructForm.append(key, formData[key])
+    const { name, email, message } = data
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+
+    const messageConfig = {
+      service_id: process.env.GATSBY_SERVICE_ID,
+      template_id: process.env.GATSBY_TEMPLATE_ID,
+      user_id: process.env.GATSBY_USER_ID,
+      template_params: {
+        from_name: name,
+        from_email: email,
+        message: message,
+      },
+    }
+
+    try {
+      const body = JSON.stringify(messageConfig)
+      const response = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        body,
+        config
+      )
+      if (response.status === 200) {
+        reset()
+        setAlert(true)
+        setTimeout(() => {
+          setAlert(false)
+        }, 3000)
+      }
+    } catch (error) {
+      // console.log(error)
     }
   }
   // Handles the errors
@@ -54,18 +69,12 @@ const ContactForm = () => {
   return (
     <div className={classes["gridContent"]}>
       <h1>Get In Touch</h1>
-      <p>
-        Feel free to send me a message and I’ll get back to you as soon as I
-        can.
-      </p>
+
       <form
         name="contact_me"
         onSubmit={handleSubmit(onSubmit, onError)}
         className={classes["gridForm"]}
         noValidate="novalidate"
-        method="POST"
-        data-netlify="true"
-        data-netlify-recaptcha="true"
       >
         <input type="hidden" name="form-name" value="contact_form" />
         <div className={classes["input"]}>
@@ -133,7 +142,7 @@ const ContactForm = () => {
           <textarea
             required
             id="message"
-            rows="6"
+            rows="4"
             type="text"
             className={`${classes["inputField"]} ${
               errors.message ? `${classes["errorField"]}` : ""
@@ -161,14 +170,19 @@ const ContactForm = () => {
           )}
         </div>
 
-        <br />
-        <ReCAPTCHA
-          sitekey="{process.env.GATSBY_RECAPTCHA_KEY}"
-          size="invisible"
-        />
+        {alert && (
+          <Message fadeState={alert}>
+            Thanks for Reaching out, I'll get back to you as soon as I can
+          </Message>
+        )}
 
-        <Button classNames={`buttonSubmit`} type="submit">
+        <Button
+          classNames={`buttonSubmit`}
+          type="submit"
+          disabled={!isDirty || !isValid}
+        >
           Submit
+          {isSubmitting && <SubmitLoader />}
         </Button>
       </form>
     </div>

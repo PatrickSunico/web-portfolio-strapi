@@ -6,6 +6,7 @@ const Button = props => {
     <button
       className={classes[props.classNames]}
       type={props.type ? props.type : "button"}
+      disabled={props.type === "submit" && props.disabled}
     >
       {props.children}
     </button>

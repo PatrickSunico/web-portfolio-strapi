@@ -6,6 +6,7 @@
   "author": "Patrick Sunico <apatricksunico@gmail.com>",
   "dependencies": {
     "axios": "^0.23.0",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.14.2",
     "gatsby-plugin-image": "^1.14.1",

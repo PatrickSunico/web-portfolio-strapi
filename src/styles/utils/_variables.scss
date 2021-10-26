@@ -82,6 +82,12 @@
     // Hover Icon Effect
     --translateY: translateY(-3px);
 
+    // Disabled Button
+    --disableTransform: translateY(0);
+    --disableColor: #d1d1d1;
+    --disableBGColor: #9b9b9b;
+    --disableHover: #a7a7a7;
+
     // Transitions
     --transition-all: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 

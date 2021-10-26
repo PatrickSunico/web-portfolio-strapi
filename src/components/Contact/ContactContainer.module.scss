@@ -1,9 +1,8 @@
 @use "../../styles/utils/mixins" as *;
 
 .contactParent {
-    padding: 8em 0;
+    padding: 8em 0 4em 0;
     background-color: #0b1d2f;
-    // height: calc(100vh);
     height: 100%;
 }
 
