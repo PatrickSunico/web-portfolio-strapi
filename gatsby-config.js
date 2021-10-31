@@ -52,7 +52,9 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://gentle-fortress-28010.herokuapp.com`,
+        apiURL: process.env.DEPLOY_URL
+          ? `https://gentle-fortress-28010.herokuapp.com`
+          : `http://localhost:8082`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`experiences`, `portfolios`, `other-projects`],
         singleTypes: [`hero`, `about`],
