@@ -48,7 +48,7 @@ const PortfolioCard = props => {
                         </a>
                       </li>
                     )) ||
-                    (availableLinks === "WebLink" && (
+                    (availableLinks === "Web" && (
                       <li key={id} className={classes["link"]}>
                         <a href={socialLink}>
                           <WebLink />
