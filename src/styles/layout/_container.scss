@@ -10,6 +10,14 @@
     padding: 0;
 }
 
+.pageNotFoundContainer {
+    display: flex;
+    align-items: center;
+    max-width: var(--hero-container);
+    margin: 0 auto;
+    padding: 0;
+}
+
 // Section Containers
 .sectionContainer {
     display: flex;

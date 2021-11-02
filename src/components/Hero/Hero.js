@@ -11,7 +11,7 @@ const Hero = () => {
     <section id="hero">
       <motion.div className={classes["hero"]}>
         <ParallaxObjects>
-          <HeroDetails />f
+          <HeroDetails />
         </ParallaxObjects>
       </motion.div>
     </section>
