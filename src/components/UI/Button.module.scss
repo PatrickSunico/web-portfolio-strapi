@@ -29,6 +29,7 @@
     @extend .button;
     margin: 40px 0;
     width: 100%;
+    height: 75px;
 
     &:disabled {
         background-color: var(--disableBGColor);
@@ -42,7 +43,7 @@
 
     svg {
         width: 40px;
-        margin-left: 20px;
+        margin-left: 10px;
         circle {
             display: flex;
             align-items: center;

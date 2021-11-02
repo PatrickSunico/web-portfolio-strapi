@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import LinkedIn from "../../../assets/icons/LinkedInLink.svg"
 import Behance from "../../../assets/icons/BehanceLink.svg"
@@ -7,7 +6,14 @@ import Github from "../../../assets/icons/GithubLink.svg"
 
 import * as classes from "./ContactDetails.module.scss"
 
+import { useHeroDataQuery } from "../../../hooks/useHeroDataQuery"
+
+// const socialLinks = heroQuery.socialLinks.nodes[0].HeroSection
+
 const ContactDetails = () => {
+  const heroQuery = useHeroDataQuery()
+  const socialLinks = heroQuery.socialLinks.nodes[0].HeroSection
+
   return (
     <div className={classes["gridDetails"]}>
       <div className={classes["details"]}>
@@ -22,19 +28,19 @@ const ContactDetails = () => {
       <div className={classes["details"]}>
         <ul>
           <li>
-            <Link to="/">
+            <a href={socialLinks.github_link} rel="noopener" targe="_blank">
               <Github />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/">
+            <a href={socialLinks.linkedin_link} rel="noopener" targe="_blank">
               <LinkedIn />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/">
+            <a href={socialLinks.behance_link} rel="noopener" targe="_blank">
               <Behance />
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

@@ -56,7 +56,6 @@ const IndexPage = props => {
             <Layout navigation={props} pageTitle="Home Page">
               <Navbar navigation={props} />
               <Seo title="Home" />
-
               <ComponentWrapper>
                 <SocialLinks />
                 <Hero />

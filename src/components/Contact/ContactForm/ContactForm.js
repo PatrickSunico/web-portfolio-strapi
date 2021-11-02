@@ -35,9 +35,9 @@ const ContactForm = () => {
     }
 
     const messageConfig = {
-      service_id: process.env.GATSBY_SERVICE_ID,
-      template_id: process.env.GATSBY_TEMPLATE_ID,
-      user_id: process.env.GATSBY_USER_ID,
+      service_id: process.env.GATSBY_EMAILJS_SERVICE_ID,
+      template_id: process.env.GATSBY_EMAILJS_TEMPLATE_ID,
+      user_id: process.env.GATSBY_EMAILJS_USER_ID,
       template_params: {
         from_name: name,
         from_email: email,
