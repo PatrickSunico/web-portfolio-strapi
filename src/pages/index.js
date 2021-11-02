@@ -18,24 +18,6 @@ import AnimationLoader from "../components/AnimationLoader/AnimationLoader"
 
 const IndexPage = props => {
   const [loading, setLoading] = useState(true)
-  // Loading Animation
-
-  // return (
-  //   <Layout navigation={props} pageTitle="Home Page">
-  //     <Navbar navigation={props} />
-  //     <Seo title="Home" />
-
-  //     <ComponentWrapper>
-  //       <SocialLinks />
-  //       <Hero />
-  //       <About />
-  //       <Experience />
-  //       <Portfolio />
-  //       <ProjectList />
-  //       <ContactContainer />
-  //     </ComponentWrapper>
-  //   </Layout>
-  // )
 
   // Working Code
   useEffect(() => {
