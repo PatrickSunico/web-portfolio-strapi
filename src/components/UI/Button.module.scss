@@ -50,3 +50,8 @@
         }
     }
 }
+
+.button404 {
+    @extend .button;
+    width: 180px;
+}

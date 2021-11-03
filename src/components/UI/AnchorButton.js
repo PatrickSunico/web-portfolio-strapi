@@ -4,7 +4,6 @@ import * as classes from "./Button.module.scss"
 import { motion } from "framer-motion"
 
 const AnchorButton = props => {
-  // const resume = props.resume
   const localFile = props.local.publicURL
 
   return (
