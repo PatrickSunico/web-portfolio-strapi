@@ -85,6 +85,8 @@ p.errorMessage {
             outline: 0;
             font-family: var(--default-font);
 
+            background-color: transparent;
+
             border-bottom-color: #6658d3;
             & + .inputLabel {
                 color: #6658d3;
