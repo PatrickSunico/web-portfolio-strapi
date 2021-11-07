@@ -13,7 +13,7 @@ module.exports = {
     title: `Patrick Sunico`,
     description: `Patrick Sunico Frontend Developer`,
     author: `Patrick Sunico`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://apatricksunico.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,7 +38,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/web-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
