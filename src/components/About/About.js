@@ -1,7 +1,7 @@
 import React from "react"
 import AboutDescription from "./AboutDescription/AboutDescription"
 import Fade from "react-reveal/Fade"
-
+// About Section
 const About = () => {
   return (
     <section id="about">
