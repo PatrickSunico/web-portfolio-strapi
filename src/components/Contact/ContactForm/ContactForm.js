@@ -60,7 +60,7 @@ const ContactForm = () => {
         }, 3000)
       }
     } catch (error) {
-      // console.log(error)
+      console.log(error)
     }
   }
   // Handles the errors
